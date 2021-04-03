@@ -2,6 +2,7 @@
   <div id="app">
     <NavBar></NavBar>
     <WelcomeAlert></WelcomeAlert>
+    <router-view></router-view>
   </div>
 </template>
 

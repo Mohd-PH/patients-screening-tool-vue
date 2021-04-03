@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Router from './router'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import './registerServiceWorker'
@@ -11,5 +12,6 @@ Vue.use(BootstrapVueIcons)
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App)
+  render: h => h(App),
+  router: Router
 }).$mount('#app')
