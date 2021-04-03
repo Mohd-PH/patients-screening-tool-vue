@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <NavBar></NavBar>
     <WelcomeAlert></WelcomeAlert>
   </div>
 </template>
 
 <script>
 import WelcomeAlert from './components/WelcomeAlert'
+import NavBar from './components/NavBar'
 
 export default {
   name: 'app',
   components: {
-    WelcomeAlert
+    WelcomeAlert,
+    NavBar
   }
 }
 </script>
@@ -22,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
