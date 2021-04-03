@@ -2,7 +2,9 @@
   <div id="app">
     <NavBar></NavBar>
     <WelcomeAlert></WelcomeAlert>
-    <router-view></router-view>
+    <div class="routerView">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -26,5 +28,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.routerView {
+  padding-top: 30px;
 }
 </style>
