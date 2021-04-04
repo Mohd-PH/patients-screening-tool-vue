@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h3>Patients information</h3>
     <b-row class="justify-content-md-center">
       <b-col lg="4">
         <b-form @submit="onSubmit">
