@@ -32,7 +32,10 @@ describe('patientsInformation.vue', () => {
       gender: 'Male',
       smoker: 'No',
       packYears: null,
-      postmenopausal: null
+      postmenopausal: null,
+      height: null,
+      weight: null,
+      BMI: null
     })
   })
   it('shows the pack years input for smokers and emits the data', async () => {
@@ -67,7 +70,10 @@ describe('patientsInformation.vue', () => {
       gender: 'Male',
       smoker: 'Yes',
       packYears: 22,
-      postmenopausal: null
+      postmenopausal: null,
+      height: null,
+      weight: null,
+      BMI: null
     })
   })
   it('shows the postmenopausal select option for female patients and emits the data', async () => {
@@ -102,7 +108,47 @@ describe('patientsInformation.vue', () => {
       gender: 'Female',
       smoker: 'No',
       packYears: null,
-      postmenopausal: 'Yes'
+      postmenopausal: 'Yes',
+      height: null,
+      weight: null,
+      BMI: null
+    })
+  })
+
+  it('It calculates the BMI and emits it with the data', async () => {
+    const wrapper = mount(patientsInformation, {
+      localVue
+    })
+
+    const age = wrapper.find('#input-age')
+    await age.setValue(55)
+    expect(wrapper.find('#input-age').element.value).toBe('55')
+
+    const height = wrapper.find('#input-height')
+    await height.setValue(169)
+    expect(wrapper.find('#input-height').element.value).toBe('169')
+
+    const weight = wrapper.find('#input-weight')
+    await weight.setValue(90)
+    expect(wrapper.find('#input-weight').element.value).toBe('90')
+
+    const gender = wrapper.find('#input-gender')
+    await gender.setValue('Female')
+    expect(wrapper.find('#input-gender').element.value).toBe('Female')
+
+    await wrapper.setData({ form: { smoker: 'No' } })
+    expect(wrapper.find('#input-smoker').element.value).toBe('No')
+
+    await wrapper.find('form').trigger('submit')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+      age: 55,
+      gender: 'Female',
+      smoker: 'No',
+      packYears: null,
+      postmenopausal: null,
+      height: 169,
+      weight: 90,
+      BMI: 31.5
     })
   })
 })

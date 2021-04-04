@@ -9,19 +9,29 @@
             </b-form-input>
           </b-form-group>
 
-          <b-form-group id="input-group-2" label="Gender:" label-for="input-gender">
+          <b-form-group id="input-group-2" label="Height:" label-for="input-height">
+            <b-form-input id="input-height" v-model.number="form.height" type="number" placeholder="Enter height in cm" required>
+            </b-form-input>
+          </b-form-group>
+
+          <b-form-group id="input-group-3" label="Weight:" label-for="input-weight">
+            <b-form-input id="input-weight" v-model.number="form.weight" type="number" placeholder="Enter weight in kg" required>
+            </b-form-input>
+          </b-form-group>
+
+          <b-form-group id="input-group-4" label="Gender:" label-for="input-gender">
             <b-form-select id="input-gender" v-model="form.gender" :options="genders" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-3" label="Is she postmenopausal:" label-for="input-postmenopausal" v-if="form.gender === 'Female'">
+          <b-form-group id="input-group-5" label="Is she postmenopausal:" label-for="input-postmenopausal" v-if="form.gender === 'Female'">
             <b-form-select id="input-postmenopausal" v-model="form.postmenopausal" :options="postmenopausal" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-4" label="Smoker:" label-for="input-smoker">
+          <b-form-group id="input-group-6" label="Smoker:" label-for="input-smoker">
             <b-form-select id="input-smoker" v-model="form.smoker" :options="smokers" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-5" label="Pack years:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
+          <b-form-group id="input-group-7" label="Pack years:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
             <b-form-input id="input-packYears" v-model.number="form.packYears" type="number" placeholder="Pack years" required>
             </b-form-input>
           </b-form-group>
@@ -47,6 +57,9 @@ export default {
       form: {
         gender: null,
         age: null,
+        height: null,
+        weight: null,
+        BMI: null,
         smoker: null,
         packYears: null,
         postmenopausal: null
@@ -59,6 +72,10 @@ export default {
   methods: {
     onSubmit (e) {
       e.preventDefault()
+      this.form.BMI = Math.floor((this.form.weight / (Math.pow((this.form.height / 100), 2))) * 10) / 10
+      if (isNaN(this.form.BMI)) {
+        this.form.BMI = null
+      }
       this.$emit('patientInformationSubmitted', this.form)
     }
   }
