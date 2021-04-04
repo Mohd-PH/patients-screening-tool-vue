@@ -69,6 +69,12 @@ export default {
           recommendation: this.lungCancer
         })
       }
+      if(this.osteoporosisToPreventFracturesScreening){
+        screening.push({
+          class: 'osteoporosisToPreventFracturesScreening',
+          recommendation: this.osteoporosisToPreventFracturesScreening
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -185,6 +191,33 @@ Refer to the link for the relative benefits and harms of alternative screening s
           grade: 'B',
           recommendation: `The USPSTF recommends annual screening for lung cancer with low-dose computed tomography (LDCT) in adults aged 50 to 80 years who have a 20 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery.`,
           date: 'March 09, 2021'
+        }
+      } else {
+        return false
+      }
+    },
+    osteoporosisToPreventFracturesScreening () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for males
+      if (this.patientsInformationData.gender === 'Male') return false
+      if (this.patientsInformationData.age >= 65) {
+        return {
+          disease: 'Osteoporosis to Prevent Fractures screening',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for osteoporosis with bone measurement testing to prevent osteoporotic fractures in women 65 years and older.`,
+          date: 'June 26, 2018'
+        }
+      } else if (this.patientsInformationData.age < 65 && this.patientsInformationData.postmenopausal) {
+        return {
+          disease: 'Osteoporosis to Prevent Fractures screening',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for osteoporosis with bone measurement testing to prevent osteoporotic fractures in postmenopausal women younger than 65 years who are at increased risk of osteoporosis, as determined by a formal clinical risk assessment tool.
+Refer to the link for more information on risk assessment`,
+          date: 'June 26, 2018'
         }
       } else {
         return false
