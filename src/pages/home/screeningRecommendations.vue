@@ -69,13 +69,13 @@ export default {
           recommendation: this.lungCancer
         })
       }
-      if(this.osteoporosisToPreventFracturesScreening){
+      if (this.osteoporosisToPreventFracturesScreening) {
         screening.push({
           class: 'osteoporosisToPreventFracturesScreening',
           recommendation: this.osteoporosisToPreventFracturesScreening
         })
       }
-      if(this.depressionInAdults){
+      if (this.depressionInAdults) {
         screening.push({
           class: 'depressionInAdults',
           recommendation: this.depressionInAdults
