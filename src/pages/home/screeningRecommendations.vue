@@ -42,6 +42,19 @@
           :date="prostateCancer.date"
           ></screeningRecommendationCard>
         </b-col>
+        <b-col
+          lg="6"
+          class="recommendation cervicalCancer"
+          v-if="cervicalCancer">
+          <screeningRecommendationCard
+          :disease="cervicalCancer.disease"
+          :organization="cervicalCancer.organization"
+          :link="cervicalCancer.link"
+          :grade="cervicalCancer.grade"
+          :recommendation="cervicalCancer.recommendation"
+          :date="cervicalCancer.date"
+          ></screeningRecommendationCard>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -138,6 +151,25 @@ Refer to the link for more information for information on implementation of the 
           grade: 'C',
           recommendation: `For men aged 55 to 69 years, the decision to undergo periodic prostate-specific antigen (PSA)-based screening for prostate cancer should be an individual one. Before deciding whether to be screened, men should have an opportunity to discuss the potential benefits and harms of screening with their clinician and to incorporate their values and preferences in the decision. Screening offers a small potential benefit of reducing the chance of death from prostate cancer in some men. However, many men will experience potential harms of screening, including false-positive results that require additional testing and possible prostate biopsy; overdiagnosis and overtreatment; and treatment complications, such as incontinence and erectile dysfunction. In determining whether this service is appropriate in individual cases, patients and clinicians should consider the balance of benefits and harms on the basis of family history, race/ethnicity, comorbid medical conditions, patient values about the benefits and harms of screening and treatment-specific outcomes, and other health needs. Clinicians should not screen men who do not express a preference for screening.`,
           date: 'May 08, 2018'
+        }
+      } else {
+        return false
+      }
+    },
+    cervicalCancer () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for males
+      if (this.patientsInformationData.gender === 'Male') return false
+      if (this.patientsInformationData.age >= 21 && this.patientsInformationData.age <= 65) {
+        return {
+          disease: 'Cervical cancer screening',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening',
+          grade: 'A',
+          recommendation: `The USPSTF recommends screening for cervical cancer every 3 years with cervical cytology alone in women aged 21 to 29 years. For women aged 30 to 65 years, the USPSTF recommends screening every 3 years with cervical cytology alone, every 5 years with high-risk human papillomavirus (hrHPV) testing alone, or every 5 years with hrHPV testing in combination with cytology (cotesting).
+
+Refer to the link for the relative benefits and harms of alternative screening strategies for women 21 years or older.`,
+          date: 'August 21, 2018'
         }
       } else {
         return false
