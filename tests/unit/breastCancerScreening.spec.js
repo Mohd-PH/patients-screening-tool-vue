@@ -9,7 +9,7 @@ const localVue = createLocalVue()
 localVue.use(BootstrapVue)
 localVue.use(BootstrapVueIcons)
 
-describe('Colorectal cancer screening', () => {
+describe('Breast cancer screening', () => {
   // This test follows the breast cancer screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
   // Last time accessed 04/04/2021
