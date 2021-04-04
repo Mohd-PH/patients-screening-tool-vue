@@ -17,7 +17,7 @@
             <b-form-select id="input-smoker" v-model="form.smoker" :options="smokers" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-4" label="Smoker:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
+          <b-form-group id="input-group-4" label="Pack years:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
             <b-form-input id="input-packYears" v-model.number="form.packYears" type="number" placeholder="Pack years" required>
             </b-form-input>
           </b-form-group>
