@@ -16,6 +16,11 @@
           <b-form-group id="input-group-3" label="Smoker:" label-for="input-smoker">
             <b-form-select id="input-smoker" v-model="form.smoker" :options="smokers" required></b-form-select>
           </b-form-group>
+
+          <b-form-group id="input-group-4" label="Smoker:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
+            <b-form-input id="input-packYears" v-model.number="form.packYears" type="number" placeholder="Pack years" required>
+            </b-form-input>
+          </b-form-group>
           <b-row>
             <b-col>
               <b-button type="submit" class="submit-button" variant="primary">Submit</b-button>
@@ -38,7 +43,8 @@ export default {
       form: {
         gender: null,
         age: null,
-        smoker: null
+        smoker: null,
+        packYears: null
       },
       genders: [{ text: 'Select One', value: null }, 'Male', 'Female'],
       smokers: [{ text: 'Select One', value: null }, 'Yes', 'No']
