@@ -19,7 +19,7 @@ describe('Colorectal cancer screening', () => {
       localVue,
       propsData: {
         patientsInformationData: {
-          age: 80,
+          age: 55,
           gender: 'Male',
           smoker: 'No'
         }

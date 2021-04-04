@@ -82,7 +82,7 @@ Screening would be most appropriate among adults who 1) are healthy enough to un
     breastCancer () {
       if (!this.patientsInformationData) return false
       //  No screening recommendations for males
-      if (!this.patientsInformationData.gender === 'Male') return false
+      if (this.patientsInformationData.gender === 'Male') return false
       if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 74) {
         return {
           disease: 'Breast cancer screening',
