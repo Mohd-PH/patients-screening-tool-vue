@@ -26,7 +26,7 @@ describe('Depression screening', () => {
       }
     })
 
-    expect(wrapper.find('depression').element).toBeFalsy()
+    expect(wrapper.find('depression').element).toBe()
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-adults-screening')
   })
