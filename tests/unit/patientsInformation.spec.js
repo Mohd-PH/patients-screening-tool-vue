@@ -45,7 +45,6 @@ describe('patientsInformation.vue', () => {
     // Pack years field is hidden
     expect(wrapper.find('#input-packYears').element).toBeFalsy()
 
-    const smoker = wrapper.find('#input-smoker')
     await wrapper.setData({ form: { smoker: 'Yes' } })
     expect(wrapper.find('#input-smoker').element.value).toBe('Yes')
 
