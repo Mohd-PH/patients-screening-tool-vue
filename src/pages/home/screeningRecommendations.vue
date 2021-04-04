@@ -69,10 +69,10 @@ export default {
           recommendation: this.lungCancer
         })
       }
-      if (this.osteoporosisToPreventFracturesScreening) {
+      if (this.osteoporosisToPreventFractures) {
         screening.push({
-          class: 'osteoporosisToPreventFracturesScreening',
-          recommendation: this.osteoporosisToPreventFracturesScreening
+          class: 'osteoporosisToPreventFractures',
+          recommendation: this.osteoporosisToPreventFractures
         })
       }
       if (this.depressionInAdults) {
@@ -202,13 +202,13 @@ Refer to the link for the relative benefits and harms of alternative screening s
         return false
       }
     },
-    osteoporosisToPreventFracturesScreening () {
+    osteoporosisToPreventFractures () {
       if (!this.patientsInformationData) return false
       //  No screening recommendations for males
       if (this.patientsInformationData.gender === 'Male') return false
       if (this.patientsInformationData.age >= 65) {
         return {
-          disease: 'Osteoporosis to Prevent Fractures screening',
+          disease: 'Osteoporosis to Prevent Fractures',
           organization: 'U.S. Preventive Services Task Force',
           link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening',
           grade: 'B',
@@ -217,7 +217,7 @@ Refer to the link for the relative benefits and harms of alternative screening s
         }
       } else if (this.patientsInformationData.age < 65 && this.patientsInformationData.postmenopausal) {
         return {
-          disease: 'Osteoporosis to Prevent Fractures screening',
+          disease: 'Osteoporosis to Prevent Fractures',
           organization: 'U.S. Preventive Services Task Force',
           link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening',
           grade: 'B',

@@ -26,8 +26,8 @@ describe('Osteoporosis to prevent fractures screening', () => {
       }
     })
 
-    expect(wrapper.find('osteoporosisToPreventFracturesScreening').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures screening')
+    expect(wrapper.find('osteoporosisToPreventFractures').element).toBeFalsy()
+    expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
   })
   it('Screens a 65 year old female', async () => {
@@ -42,9 +42,9 @@ describe('Osteoporosis to prevent fractures screening', () => {
       }
     })
 
-    expect(wrapper.find('osteoporosisToPreventFracturesScreening').element).toBe()
+    expect(wrapper.find('osteoporosisToPreventFractures').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures screening')
+    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
   })
 
@@ -60,9 +60,9 @@ describe('Osteoporosis to prevent fractures screening', () => {
       }
     })
 
-    expect(wrapper.find('osteoporosisToPreventFracturesScreening').element).toBe()
+    expect(wrapper.find('osteoporosisToPreventFractures').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures screening')
+    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
   })
   it('Screens a 60 year old female who postmenopausal ', async () => {
@@ -78,9 +78,9 @@ describe('Osteoporosis to prevent fractures screening', () => {
       }
     })
 
-    expect(wrapper.find('osteoporosisToPreventFracturesScreening').element).toBe()
+    expect(wrapper.find('osteoporosisToPreventFractures').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures screening')
+    expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
   })
 })
