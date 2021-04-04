@@ -60,8 +60,6 @@ describe('Colorectal cancer screening', () => {
       }
     })
     expect(wrapper.find('colorectalCancer').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Recommendation Grade: A')
-    expect(wrapper.text()).not.toContain('Recommendation Grade: C')
     expect(wrapper.text()).not.toContain('Colorectal cancer screening')
     expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening')
   })
