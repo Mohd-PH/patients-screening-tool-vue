@@ -75,6 +75,12 @@ export default {
           recommendation: this.osteoporosisToPreventFracturesScreening
         })
       }
+      if(this.depressionInAdults){
+        screening.push({
+          class: 'depressionInAdults',
+          recommendation: this.depressionInAdults
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -218,6 +224,21 @@ Refer to the link for the relative benefits and harms of alternative screening s
           recommendation: `The USPSTF recommends screening for osteoporosis with bone measurement testing to prevent osteoporotic fractures in postmenopausal women younger than 65 years who are at increased risk of osteoporosis, as determined by a formal clinical risk assessment tool.
 Refer to the link for more information on risk assessment`,
           date: 'June 26, 2018'
+        }
+      } else {
+        return false
+      }
+    },
+    depressionInAdults () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.age >= 18) {
+        return {
+          disease: 'Depression in Adults',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-adults-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for depression in the general adult population, including pregnant and postpartum women. Screening should be implemented with adequate systems in place to ensure accurate diagnosis, effective treatment, and appropriate follow-up.`,
+          date: 'January 26, 2016'
         }
       } else {
         return false
