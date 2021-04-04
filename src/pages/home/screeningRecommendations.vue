@@ -5,67 +5,16 @@
       <b-row class="justify-content-md-center">
         <b-col
           lg="6"
-          class="recommendation colorectalCancer"
-          v-if="colorectalCancer">
+          v-for="screening in screeningForThisPatient"
+          :key="screening.class"
+          :class="['recommendation', screening.class]">
           <screeningRecommendationCard
-          :disease="colorectalCancer.disease"
-          :organization="colorectalCancer.organization"
-          :link="colorectalCancer.link"
-          :grade="colorectalCancer.grade"
-          :recommendation="colorectalCancer.recommendation"
-          :date="colorectalCancer.date"
-          ></screeningRecommendationCard>
-        </b-col>
-        <b-col
-          lg="6"
-          class="recommendation breastCancer"
-          v-if="breastCancer">
-          <screeningRecommendationCard
-          :disease="breastCancer.disease"
-          :organization="breastCancer.organization"
-          :link="breastCancer.link"
-          :grade="breastCancer.grade"
-          :recommendation="breastCancer.recommendation"
-          :date="breastCancer.date"
-          ></screeningRecommendationCard>
-        </b-col>
-        <b-col
-          lg="6"
-          class="recommendation prostateCancer"
-          v-if="prostateCancer">
-          <screeningRecommendationCard
-          :disease="prostateCancer.disease"
-          :organization="prostateCancer.organization"
-          :link="prostateCancer.link"
-          :grade="prostateCancer.grade"
-          :recommendation="prostateCancer.recommendation"
-          :date="prostateCancer.date"
-          ></screeningRecommendationCard>
-        </b-col>
-        <b-col
-          lg="6"
-          class="recommendation cervicalCancer"
-          v-if="cervicalCancer">
-          <screeningRecommendationCard
-          :disease="cervicalCancer.disease"
-          :organization="cervicalCancer.organization"
-          :link="cervicalCancer.link"
-          :grade="cervicalCancer.grade"
-          :recommendation="cervicalCancer.recommendation"
-          :date="cervicalCancer.date"
-          ></screeningRecommendationCard>
-        </b-col>
-        <b-col
-          lg="6"
-          class="recommendation lungCancer"
-          v-if="lungCancer">
-          <screeningRecommendationCard
-          :disease="lungCancer.disease"
-          :organization="lungCancer.organization"
-          :link="lungCancer.link"
-          :grade="lungCancer.grade"
-          :recommendation="lungCancer.recommendation"
-          :date="lungCancer.date"
+          :disease="screening.recommendation.disease"
+          :organization="screening.recommendation.organization"
+          :link="screening.recommendation.link"
+          :grade="screening.recommendation.grade"
+          :recommendation="screening.recommendation.recommendation"
+          :date="screening.recommendation.date"
           ></screeningRecommendationCard>
         </b-col>
       </b-row>
@@ -88,6 +37,40 @@ export default {
     }
   },
   computed: {
+    screeningForThisPatient () {
+      const screening = []
+      if (this.colorectalCancer) {
+        screening.push({
+          class: 'colorectalCancer',
+          recommendation: this.colorectalCancer
+        })
+      }
+      if (this.breastCancer) {
+        screening.push({
+          class: 'breastCancer',
+          recommendation: this.breastCancer
+        })
+      }
+      if (this.prostateCancer) {
+        screening.push({
+          class: 'prostateCancer',
+          recommendation: this.prostateCancer
+        })
+      }
+      if (this.cervicalCancer) {
+        screening.push({
+          class: 'cervicalCancer',
+          recommendation: this.cervicalCancer
+        })
+      }
+      if (this.lungCancer) {
+        screening.push({
+          class: 'lungCancer',
+          recommendation: this.lungCancer
+        })
+      }
+      return screening
+    },
     colorectalCancer () {
       if (!this.patientsInformationData) return false
       if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 75) {
