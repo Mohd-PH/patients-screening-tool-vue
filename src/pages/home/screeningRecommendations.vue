@@ -29,6 +29,19 @@
           :date="breastCancer.date"
           ></screeningRecommendationCard>
         </b-col>
+        <b-col
+          lg="6"
+          class="recommendation prostateCancer"
+          v-if="prostateCancer">
+          <screeningRecommendationCard
+          :disease="prostateCancer.disease"
+          :organization="prostateCancer.organization"
+          :link="prostateCancer.link"
+          :grade="prostateCancer.grade"
+          :recommendation="prostateCancer.recommendation"
+          :date="prostateCancer.date"
+          ></screeningRecommendationCard>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -108,6 +121,23 @@ Screening would be most appropriate among adults who 1) are healthy enough to un
 
 Refer to the link for more information for information on implementation of the C recommendation.`,
           date: 'January 11, 2016'
+        }
+      } else {
+        return false
+      }
+    },
+    prostateCancer () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for males
+      if (this.patientsInformationData.gender === 'Female') return false
+      if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 74) {
+        return {
+          disease: 'Prostate cancer screening',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening',
+          grade: 'C',
+          recommendation: `For men aged 55 to 69 years, the decision to undergo periodic prostate-specific antigen (PSA)-based screening for prostate cancer should be an individual one. Before deciding whether to be screened, men should have an opportunity to discuss the potential benefits and harms of screening with their clinician and to incorporate their values and preferences in the decision. Screening offers a small potential benefit of reducing the chance of death from prostate cancer in some men. However, many men will experience potential harms of screening, including false-positive results that require additional testing and possible prostate biopsy; overdiagnosis and overtreatment; and treatment complications, such as incontinence and erectile dysfunction. In determining whether this service is appropriate in individual cases, patients and clinicians should consider the balance of benefits and harms on the basis of family history, race/ethnicity, comorbid medical conditions, patient values about the benefits and harms of screening and treatment-specific outcomes, and other health needs. Clinicians should not screen men who do not express a preference for screening.`,
+          date: 'May 08, 2018'
         }
       } else {
         return false
