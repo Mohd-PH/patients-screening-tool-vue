@@ -55,6 +55,19 @@
           :date="cervicalCancer.date"
           ></screeningRecommendationCard>
         </b-col>
+        <b-col
+          lg="6"
+          class="recommendation lungCancer"
+          v-if="lungCancer">
+          <screeningRecommendationCard
+          :disease="lungCancer.disease"
+          :organization="lungCancer.organization"
+          :link="lungCancer.link"
+          :grade="lungCancer.grade"
+          :recommendation="lungCancer.recommendation"
+          :date="lungCancer.date"
+          ></screeningRecommendationCard>
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -170,6 +183,25 @@ Refer to the link for more information for information on implementation of the 
 
 Refer to the link for the relative benefits and harms of alternative screening strategies for women 21 years or older.`,
           date: 'August 21, 2018'
+        }
+      } else {
+        return false
+      }
+    },
+    lungCancer () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for non-smokers
+      if (this.patientsInformationData.smoker === 'No') return false
+      //  No screening recommendations for smokers who smoked less than 20 pack year
+      if (this.patientsInformationData.packYears < 20) return false
+      if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 80 && this.patientsInformationData.packYears >= 20) {
+        return {
+          disease: 'Lung cancer screening',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends annual screening for lung cancer with low-dose computed tomography (LDCT) in adults aged 50 to 80 years who have a 20 pack-year smoking history and currently smoke or have quit within the past 15 years. Screening should be discontinued once a person has not smoked for 15 years or develops a health problem that substantially limits life expectancy or the ability or willingness to have curative lung surgery.`,
+          date: 'March 09, 2021'
         }
       } else {
         return false
