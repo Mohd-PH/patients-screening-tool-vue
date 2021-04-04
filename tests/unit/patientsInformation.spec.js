@@ -27,7 +27,13 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.find('#input-smoker').element.value).toBe('No')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({ age: 20, gender: 'Male', smoker: 'No', packYears: null })
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+      age: 20,
+      gender: 'Male',
+      smoker: 'No',
+      packYears: null,
+      postmenopausal: null
+    })
   })
   it('shows the pack years input for smokers and emits the data', async () => {
     const wrapper = mount(patientsInformation, {
@@ -56,6 +62,47 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.find('#input-packYears').element.value).toBe('22')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({ age: 55, gender: 'Male', smoker: 'Yes', packYears: 22 })
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+      age: 55,
+      gender: 'Male',
+      smoker: 'Yes',
+      packYears: 22,
+      postmenopausal: null
+    })
+  })
+  it('shows the postmenopausal select option for female patients and emits the data', async () => {
+    const wrapper = mount(patientsInformation, {
+      localVue
+    })
+
+    const age = wrapper.find('#input-age')
+    await age.setValue(55)
+    expect(wrapper.find('#input-age').element.value).toBe('55')
+
+    // Postmenopausal option is hidden
+    expect(wrapper.find('#input-postmenopausal').element).toBeFalsy()
+
+    const gender = wrapper.find('#input-gender')
+    await gender.setValue('Female')
+    expect(wrapper.find('#input-gender').element.value).toBe('Female')
+
+    // Postmenopausal option is visible
+    expect(wrapper.find('#input-postmenopausal').element).not.toBe(undefined)
+
+    await wrapper.setData({ form: { smoker: 'No' } })
+    expect(wrapper.find('#input-smoker').element.value).toBe('No')
+
+    const packYears = wrapper.find('#input-postmenopausal')
+    await packYears.setValue('Yes')
+    expect(wrapper.find('#input-postmenopausal').element.value).toBe('Yes')
+
+    await wrapper.find('form').trigger('submit')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+      age: 55,
+      gender: 'Female',
+      smoker: 'No',
+      packYears: null,
+      postmenopausal: 'Yes'
+    })
   })
 })

@@ -13,11 +13,15 @@
             <b-form-select id="input-gender" v-model="form.gender" :options="genders" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-3" label="Smoker:" label-for="input-smoker">
+          <b-form-group id="input-group-3" label="Is she postmenopausal:" label-for="input-postmenopausal" v-if="form.gender === 'Female'">
+            <b-form-select id="input-postmenopausal" v-model="form.postmenopausal" :options="postmenopausal" required></b-form-select>
+          </b-form-group>
+
+          <b-form-group id="input-group-4" label="Smoker:" label-for="input-smoker">
             <b-form-select id="input-smoker" v-model="form.smoker" :options="smokers" required></b-form-select>
           </b-form-group>
 
-          <b-form-group id="input-group-4" label="Pack years:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
+          <b-form-group id="input-group-5" label="Pack years:" label-for="input-packYears" v-if="form.smoker === 'Yes'">
             <b-form-input id="input-packYears" v-model.number="form.packYears" type="number" placeholder="Pack years" required>
             </b-form-input>
           </b-form-group>
@@ -44,10 +48,12 @@ export default {
         gender: null,
         age: null,
         smoker: null,
-        packYears: null
+        packYears: null,
+        postmenopausal: null
       },
       genders: [{ text: 'Select One', value: null }, 'Male', 'Female'],
-      smokers: [{ text: 'Select One', value: null }, 'Yes', 'No']
+      smokers: [{ text: 'Select One', value: null }, 'Yes', 'No'],
+      postmenopausal: [{ text: 'Select One', value: null }, 'Yes', 'No']
     }
   },
   methods: {
