@@ -81,6 +81,12 @@ export default {
           recommendation: this.depressionInAdults
         })
       }
+      if (this.AbnormalBloodGlucoseAndType2DiabetesMellitus) {
+        screening.push({
+          class: 'AbnormalBloodGlucoseAndType2DiabetesMellitus',
+          recommendation: this.AbnormalBloodGlucoseAndType2DiabetesMellitus
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -239,6 +245,21 @@ Refer to the link for more information on risk assessment`,
           grade: 'B',
           recommendation: `The USPSTF recommends screening for depression in the general adult population, including pregnant and postpartum women. Screening should be implemented with adequate systems in place to ensure accurate diagnosis, effective treatment, and appropriate follow-up.`,
           date: 'January 26, 2016'
+        }
+      } else {
+        return false
+      }
+    },
+    AbnormalBloodGlucoseAndType2DiabetesMellitus () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.age >= 40 && this.patientsInformationData.age <= 70 && this.patientsInformationData.BMI >= 25) {
+        return {
+          disease: 'Abnormal Blood Glucose and Type 2 Diabetes Mellitus',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults aged 40 to 70 years who are overweight or obese. Clinicians should offer or refer patients with abnormal blood glucose to intensive behavioral counseling interventions to promote a healthful diet and physical activity.`,
+          date: 'October 26, 2015'
         }
       } else {
         return false
