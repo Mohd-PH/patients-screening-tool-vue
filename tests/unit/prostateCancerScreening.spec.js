@@ -30,6 +30,41 @@ describe('Prostate cancer screening', () => {
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening')
   })
+
+  it('Doesn\'t Screen a 54 year old male', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 54,
+          gender: 'Male',
+          smoker: 'No'
+        }
+      }
+    })
+
+    expect(wrapper.find('prostateCancer').element).toBeFalsy()
+    expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening')
+  })
+
+  it('Doesn\'t Screen a 70 year old male', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 70,
+          gender: 'Male',
+          smoker: 'No'
+        }
+      }
+    })
+
+    expect(wrapper.find('prostateCancer').element).toBeFalsy()
+    expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening')
+  })
+
   it('Screens a 55 year old male', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,

@@ -163,7 +163,7 @@ Refer to the link for more information for information on implementation of the 
       if (!this.patientsInformationData) return false
       //  No screening recommendations for males
       if (this.patientsInformationData.gender === 'Female') return false
-      if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 74) {
+      if (this.patientsInformationData.age >= 55 && this.patientsInformationData.age <= 69) {
         return {
           disease: 'Prostate cancer screening',
           organization: 'U.S. Preventive Services Task Force',
