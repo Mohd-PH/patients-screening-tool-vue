@@ -6,7 +6,7 @@
     </b-row>
     <b-row class="justify-content-md-center">
       <b-col lg="4">
-        <b-form @submit="onSubmit">
+        <b-form @submit="onSubmit" @reset="onReset">
           <b-form-group id="input-group-1" label="Age:" label-for="input-age" label-cols-sm="6">
             <b-form-input id="input-age" v-model.number="form.age" type="number" placeholder="Enter age" required>
             </b-form-input>
@@ -85,6 +85,12 @@ export default {
       if (isNaN(this.form.BMI)) {
         this.form.BMI = null
       }
+      this.$emit('patientInformationSubmitted', this.form)
+    },
+    onReset (e) {
+      Object.keys(this.form).forEach(key => {
+        this.form[key] = null
+      })
       this.$emit('patientInformationSubmitted', this.form)
     }
   }
