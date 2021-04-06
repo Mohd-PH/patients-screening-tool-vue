@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h3>Patients information</h3>
+    <h3>Patient's information</h3>
+    <b-row class="justify-content-md-center">
+      <b-alert variant="success" show>This tool doesn't collect any data, it works entirely in your browser</b-alert>
+    </b-row>
     <b-row class="justify-content-md-center">
       <b-col lg="4">
         <b-form @submit="onSubmit">
