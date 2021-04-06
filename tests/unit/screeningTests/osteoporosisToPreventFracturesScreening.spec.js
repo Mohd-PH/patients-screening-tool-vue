@@ -30,6 +30,25 @@ describe('Osteoporosis to prevent fractures screening', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
   })
+
+  it('Doesn\'t Screen a 42 year old female who is not postmenopausal', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 42,
+          gender: 'Female',
+          smoker: 'No',
+          postmenopausal: 'No'
+        }
+      }
+    })
+
+    expect(wrapper.find('osteoporosisToPreventFractures').element).toBeFalsy()
+    expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening')
+  })
+
   it('Screens a 65 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,

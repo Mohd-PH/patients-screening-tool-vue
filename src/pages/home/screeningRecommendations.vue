@@ -227,7 +227,7 @@ Refer to the link for the relative benefits and harms of alternative screening s
           recommendation: `The USPSTF recommends screening for osteoporosis with bone measurement testing to prevent osteoporotic fractures in women 65 years and older.`,
           date: 'June 26, 2018'
         }
-      } else if (this.patientsInformationData.age < 65 && this.patientsInformationData.postmenopausal) {
+      } else if (this.patientsInformationData.age < 65 && this.patientsInformationData.postmenopausal === 'Yes') {
         return {
           disease: 'Osteoporosis to Prevent Fractures',
           organization: 'U.S. Preventive Services Task Force',
