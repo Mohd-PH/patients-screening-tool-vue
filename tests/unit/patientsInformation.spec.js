@@ -18,13 +18,11 @@ describe('patientsInformation.vue', () => {
     await age.setValue(20)
     expect(wrapper.find('#input-age').element.value).toBe('20')
 
-    const gender = wrapper.find('#input-gender')
-    await gender.setValue('Male')
-    expect(wrapper.find('#input-gender').element.value).toBe('Male')
+    await wrapper.find('#gender-male-button').trigger('click')
+    expect(wrapper.vm.$data.form.gender).toBe('Male')
 
-    const smoker = wrapper.find('#input-smoker')
-    await smoker.setValue('No')
-    expect(wrapper.find('#input-smoker').element.value).toBe('No')
+    await wrapper.find('#smoker-no-button').trigger('click')
+    expect(wrapper.vm.$data.form.smoker).toBe('No')
 
     await wrapper.find('form').trigger('submit')
     expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
@@ -47,15 +45,14 @@ describe('patientsInformation.vue', () => {
     await age.setValue(55)
     expect(wrapper.find('#input-age').element.value).toBe('55')
 
-    const gender = wrapper.find('#input-gender')
-    await gender.setValue('Male')
-    expect(wrapper.find('#input-gender').element.value).toBe('Male')
+    await wrapper.find('#gender-male-button').trigger('click')
+    expect(wrapper.vm.$data.form.gender).toBe('Male')
 
     // Pack years field is hidden
     expect(wrapper.find('#input-packYears').element).toBeFalsy()
 
-    await wrapper.setData({ form: { smoker: 'Yes' } })
-    expect(wrapper.find('#input-smoker').element.value).toBe('Yes')
+    await wrapper.find('#smoker-yes-button').trigger('click')
+    expect(wrapper.vm.$data.form.smoker).toBe('Yes')
 
     // Pack years field is visible
     expect(wrapper.find('#input-packYears').element).not.toBe(undefined)
@@ -88,19 +85,17 @@ describe('patientsInformation.vue', () => {
     // Postmenopausal option is hidden
     expect(wrapper.find('#input-postmenopausal').element).toBeFalsy()
 
-    const gender = wrapper.find('#input-gender')
-    await gender.setValue('Female')
-    expect(wrapper.find('#input-gender').element.value).toBe('Female')
+    await wrapper.find('#gender-female-button').trigger('click')
+    expect(wrapper.vm.$data.form.gender).toBe('Female')
 
     // Postmenopausal option is visible
     expect(wrapper.find('#input-postmenopausal').element).not.toBe(undefined)
 
-    await wrapper.setData({ form: { smoker: 'No' } })
-    expect(wrapper.find('#input-smoker').element.value).toBe('No')
+    await wrapper.find('#smoker-no-button').trigger('click')
+    expect(wrapper.vm.$data.form.smoker).toBe('No')
 
-    const packYears = wrapper.find('#input-postmenopausal')
-    await packYears.setValue('Yes')
-    expect(wrapper.find('#input-postmenopausal').element.value).toBe('Yes')
+    await wrapper.find('#postmenopausal-yes-button').trigger('click')
+    expect(wrapper.vm.$data.form.postmenopausal).toBe('Yes')
 
     await wrapper.find('form').trigger('submit')
     expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
@@ -132,12 +127,11 @@ describe('patientsInformation.vue', () => {
     await weight.setValue(90)
     expect(wrapper.find('#input-weight').element.value).toBe('90')
 
-    const gender = wrapper.find('#input-gender')
-    await gender.setValue('Female')
-    expect(wrapper.find('#input-gender').element.value).toBe('Female')
+    await wrapper.find('#gender-female-button').trigger('click')
+    expect(wrapper.vm.$data.form.gender).toBe('Female')
 
-    await wrapper.setData({ form: { smoker: 'No' } })
-    expect(wrapper.find('#input-smoker').element.value).toBe('No')
+    await wrapper.find('#smoker-no-button').trigger('click')
+    expect(wrapper.vm.$data.form.smoker).toBe('No')
 
     await wrapper.find('form').trigger('submit')
     expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
