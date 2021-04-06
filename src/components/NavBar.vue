@@ -1,7 +1,7 @@
 <template>
   <div class="WelcomeAlert">
     <b-navbar toggleable="md" type="dark" variant="info">
-      <b-navbar-brand href="#">Patients screening tool</b-navbar-brand>
+      <router-link tag="b-navbar-brand" style="cursor:pointer;" to="/">Patients screening tool</router-link>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
