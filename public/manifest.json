@@ -1,6 +1,6 @@
 {
-  "name": "patients-screening-tool",
-  "short_name": "patients-screening-tool",
+  "name": "Patients screening tool",
+  "short_name": "Patients screening",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
