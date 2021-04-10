@@ -20,6 +20,7 @@
           <b-card-text>In the time being, it covers the recommendations made by the USPSTF for the following topics:</b-card-text>
           <b-card-text>
             <ol>
+              <li>Abdominal Aortic Aneurysm: Screening</li>
               <li>Abnormal Blood Glucose and Type 2 Diabetes Mellitus: Screening</li>
               <li>Breast Cancer: Screening</li>
               <li>Cervical Cancer: Screening</li>

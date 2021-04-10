@@ -111,6 +111,12 @@ export default {
           recommendation: this.hepatitisCInfection
         })
       }
+      if (this.abdominalAorticAneurysm) {
+        screening.push({
+          class: 'abdominalAorticAneurysm',
+          recommendation: this.abdominalAorticAneurysm
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -348,6 +354,32 @@ Refer to the link for a description of adolescents and adults at increased risk 
           grade: 'B',
           recommendation: `The USPSTF recommends screening for hepatitis C virus (HCV) infection in adults aged 18 to 79 years.`,
           date: 'March 02, 2020'
+        }
+      } else {
+        return false
+      }
+    },
+    abdominalAorticAneurysm () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for females
+      if (this.patientsInformationData.gender === 'Female') return false
+      if (this.patientsInformationData.age >= 65 && this.patientsInformationData.age <= 75 && (this.patientsInformationData.smoker === 'Yes' || this.patientsInformationData.smoker === 'Ex-smoker')) {
+        return {
+          disease: 'Abdominal Aortic Aneurysm',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends 1-time screening for abdominal aortic aneurysm (AAA) with ultrasonography in men aged 65 to 75 years who have ever smoked.`,
+          date: 'December 10, 2019'
+        }
+      } else if (this.patientsInformationData.age >= 65 && this.patientsInformationData.age <= 75 && this.patientsInformationData.smoker === 'No') {
+        return {
+          disease: 'Abdominal Aortic Aneurysm',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening',
+          grade: 'C',
+          recommendation: `The USPSTF recommends that clinicians selectively offer screening for AAA with ultrasonography in men aged 65 to 75 years who have never smoked rather than routinely screening all men in this group. Evidence indicates that the net benefit of screening all men in this group is small. In determining whether this service is appropriate in individual cases, patients and clinicians should consider the balance of benefits and harms on the basis of evidence relevant to the patient's medical history, family history, other risk factors, and personal values.`,
+          date: 'December 10, 2019'
         }
       } else {
         return false

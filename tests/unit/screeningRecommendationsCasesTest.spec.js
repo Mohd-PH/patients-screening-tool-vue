@@ -26,6 +26,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -52,6 +53,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -80,6 +82,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
@@ -105,6 +108,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -132,6 +136,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
@@ -162,6 +167,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -188,6 +194,7 @@ describe('Screening recommendations cases', () => {
       }
     })
 
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -200,5 +207,36 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Unhealthy Drug Use')
+  })
+
+  it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for hepatitis B infection', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 70,
+          gender: 'Male',
+          smoker: 'Ex-smoker',
+          packYears: 18,
+          height: 170,
+          weight: 70,
+          BMI: 24.2
+        }
+      }
+    })
+
+    expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
+    expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Breast cancer')
+    expect(wrapper.text()).not.toContain('Cervical cancer')
+    expect(wrapper.text()).toContain('Colorectal cancer')
+    expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
+    expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
+    expect(wrapper.text()).toContain('High Blood Pressure in Adults')
+    expect(wrapper.text()).not.toContain('Lung cancer') // TODO
+    expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 })
