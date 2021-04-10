@@ -217,7 +217,7 @@ describe('Screening recommendations cases', () => {
           age: 70,
           gender: 'Male',
           smoker: 'Ex-smoker',
-          packYears: 18,
+          packYears: 25,
           height: 170,
           weight: 70,
           BMI: 24.2
@@ -234,7 +234,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
-    expect(wrapper.text()).not.toContain('Lung cancer') // TODO
+    expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')

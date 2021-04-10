@@ -85,4 +85,22 @@ describe('Lung cancer screening', () => {
     expect(wrapper.text()).toContain('Lung cancer screening')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening')
   })
+
+  it('Screens a 72 year old male who is an ex-smoker 28 pack year', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 72,
+          gender: 'Male',
+          smoker: 'Ex-smoker',
+          packYears: 28
+        }
+      }
+    })
+
+    expect(wrapper.find('lungCancer').element).toBe()
+    expect(wrapper.text()).toContain('Lung cancer screening')
+    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening')
+  })
 })
