@@ -93,6 +93,12 @@ export default {
           recommendation: this.highBloodPressureinAdults
         })
       }
+      if (this.unhealthyDrugUse) {
+        screening.push({
+          class: 'unhealthyDrugUse',
+          recommendation: this.unhealthyDrugUse
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -282,6 +288,22 @@ Refer to the link for more information on risk assessment`,
           recommendation: `The USPSTF recommends screening for high blood pressure in adults aged 18 years or older. The USPSTF recommends obtaining measurements outside of the clinical setting for diagnostic confirmation before starting treatment.
 Refer to the link for more information`,
           date: 'October 12, 2015'
+        }
+      } else {
+        return false
+      }
+    },
+    unhealthyDrugUse () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.age >= 18) {
+        return {
+          disease: 'Unhealthy Drug Use',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/drug-use-illicit-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening by asking questions about unhealthy drug use in adults age 18 years or older. Screening should be implemented when services for accurate diagnosis, effective treatment, and appropriate care can be offered or referred. 
+(Screening refers to asking questions about unhealthy drug use, not testing biological specimens.)`,
+          date: 'June 09, 2020'
         }
       } else {
         return false

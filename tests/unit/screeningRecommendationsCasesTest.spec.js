@@ -11,7 +11,7 @@ localVue.use(BootstrapVueIcons)
 
 describe('Screening recommendations cases', () => {
   // This test will test screening recommendation made by the screeningRecommendation.vue file for different cases
-  it('Screens a 40 year old male who is overweight "BMI = 27" for abnormal blood glucose and T2DM, depression and hypertension', async () => {
+  it('Screens a 40 year old male who is overweight "BMI = 27" for abnormal blood glucose and T2DM, depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -35,8 +35,9 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
-  it('Screens a 60 year old male smoker for 30 pack year for lung cancer, prostate cancer, colorectal cancer, depression and hypertension', async () => {
+  it('Screens a 60 year old male smoker for 30 pack year for lung cancer, prostate cancer, colorectal cancer, depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -58,9 +59,10 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 55 year old female postmenopausal smoker for 19 pack year for breast cancer, cervical cancer, osteoporosis, colorectal cancer, depression and hypertension', async () => {
+  it('Screens a 55 year old female postmenopausal smoker for 19 pack year for breast cancer, cervical cancer, osteoporosis, colorectal cancer, depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -83,8 +85,9 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
-  it('Screens a 20 year old female medically free for depression and hypertension', async () => {
+  it('Screens a 20 year old female medically free for depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -105,9 +108,10 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 43 year old female medically free for breast cancer, cervical cancer, depression and hypertension', async () => {
+  it('Screens a 43 year old female medically free for breast cancer, cervical cancer, depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -129,9 +133,10 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 55 year old male obese (BMI = 33) and smoker for 20 pack year but medically free for prostate cancer, colorectal cancer, lung cancer, abnormal BG and T2DM, depression and hypertension', async () => {
+  it('Screens a 55 year old male obese (BMI = 33) and smoker for 20 pack year but medically free for prostate cancer, colorectal cancer, lung cancer, abnormal BG and T2DM, depression, hypertension and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -156,5 +161,6 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 })
