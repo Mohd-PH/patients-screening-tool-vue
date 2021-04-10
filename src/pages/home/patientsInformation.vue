@@ -36,6 +36,13 @@
             </b-button-group>
           </b-form-group>
 
+          <b-form-group id="input-group-5" label="Is she pregnant:" label-for="input-pregnant" label-cols-sm="6" v-if="form.postmenopausal === 'No'">
+            <b-button-group id="input-pregnant">
+              <b-button id="pregnant-yes-button" :variant="form.pregnant === 'Yes' ? 'primary' : ''" @click="form.pregnant = 'Yes'">Yes</b-button>
+              <b-button id="pregnant-no-button" :variant="form.pregnant === 'No' ? 'primary' : ''" @click="form.pregnant = 'No'">No</b-button>
+            </b-button-group>
+          </b-form-group>
+
           <b-form-group id="input-group-6" label="Smoker:" label-for="input-smoker" label-cols-sm="6">
             <b-button-group id="input-smoker">
               <b-button id="smoker-yes-button" :variant="form.smoker === 'Yes' ? 'primary' : ''" @click="form.smoker = 'Yes'">Yes</b-button>
@@ -75,7 +82,8 @@ export default {
         BMI: null,
         smoker: null,
         packYears: null,
-        postmenopausal: null
+        postmenopausal: null,
+        pregnant: null
       }
     }
   },

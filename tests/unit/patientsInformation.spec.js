@@ -31,6 +31,7 @@ describe('patientsInformation.vue', () => {
       smoker: 'No',
       packYears: null,
       postmenopausal: null,
+      pregnant: null,
       height: null,
       weight: null,
       BMI: null
@@ -68,6 +69,7 @@ describe('patientsInformation.vue', () => {
       smoker: 'Yes',
       packYears: 22,
       postmenopausal: null,
+      pregnant: null,
       height: null,
       weight: null,
       BMI: null
@@ -104,6 +106,48 @@ describe('patientsInformation.vue', () => {
       smoker: 'No',
       packYears: null,
       postmenopausal: 'Yes',
+      pregnant: null,
+      height: null,
+      weight: null,
+      BMI: null
+    })
+  })
+
+  it('Shows the pregnant buttons for female patients who is not postmenopausal and emits the data', async () => {
+    const wrapper = mount(patientsInformation, {
+      localVue
+    })
+
+    const age = wrapper.find('#input-age')
+    await age.setValue(25)
+    expect(wrapper.find('#input-age').element.value).toBe('25')
+
+    await wrapper.find('#gender-female-button').trigger('click')
+    expect(wrapper.vm.$data.form.gender).toBe('Female')
+
+    // Postmenopausal option is hidden
+    expect(wrapper.find('#input-pregnant').element).toBeFalsy()
+
+    await wrapper.find('#postmenopausal-no-button').trigger('click')
+    expect(wrapper.vm.$data.form.postmenopausal).toBe('No')
+
+    // Postmenopausal option is visible
+    expect(wrapper.find('#input-pregnant').element).not.toBe(undefined)
+
+    await wrapper.find('#pregnant-yes-button').trigger('click')
+    expect(wrapper.vm.$data.form.pregnant).toBe('Yes')
+
+    await wrapper.find('#smoker-no-button').trigger('click')
+    expect(wrapper.vm.$data.form.smoker).toBe('No')
+
+    await wrapper.find('form').trigger('submit')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+      age: 25,
+      gender: 'Female',
+      smoker: 'No',
+      packYears: null,
+      postmenopausal: 'No',
+      pregnant: 'Yes',
       height: null,
       weight: null,
       BMI: null
@@ -140,6 +184,7 @@ describe('patientsInformation.vue', () => {
       smoker: 'No',
       packYears: null,
       postmenopausal: null,
+      pregnant: null,
       height: 169,
       weight: 90,
       BMI: 31.5
