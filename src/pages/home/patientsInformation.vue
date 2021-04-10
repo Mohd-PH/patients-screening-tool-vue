@@ -39,11 +39,12 @@
           <b-form-group id="input-group-6" label="Smoker:" label-for="input-smoker" label-cols-sm="6">
             <b-button-group id="input-smoker">
               <b-button id="smoker-yes-button" :variant="form.smoker === 'Yes' ? 'primary' : ''" @click="form.smoker = 'Yes'">Yes</b-button>
+              <b-button id="exsmoker-button" :variant="form.smoker === 'Ex-smoker' ? 'primary' : ''" @click="form.smoker = 'Ex-smoker'">Ex-smoker</b-button>
               <b-button id="smoker-no-button" :variant="form.smoker === 'No' ? 'primary' : ''" @click="form.smoker = 'No'">No</b-button>
             </b-button-group>
           </b-form-group>
 
-          <b-form-group id="input-group-7" label="Pack years:" label-for="input-packYears" label-cols-sm="6" v-if="form.smoker === 'Yes'">
+          <b-form-group id="input-group-7" label="Pack years:" label-for="input-packYears" label-cols-sm="6" v-if="form.smoker === 'Yes' || form.smoker === 'Ex-smoker'">
             <b-form-input id="input-packYears" v-model.number="form.packYears" type="number" placeholder="Pack years" required>
             </b-form-input>
           </b-form-group>
