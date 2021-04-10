@@ -28,6 +28,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
@@ -55,6 +56,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
@@ -84,6 +86,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
@@ -103,13 +106,15 @@ describe('Screening recommendations cases', () => {
         patientsInformationData: {
           age: 20,
           gender: 'Female',
-          smoker: 'No'
+          smoker: 'No',
+          pregnant: 'No'
         }
       }
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
@@ -123,7 +128,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 43 year old female medically free for breast cancer, cervical cancer, depression, hypertension, unhealthy drug use, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy drug use, hepatitis B infection, hepatitis C infection and Asymptomatic Bacteriuria', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -131,13 +136,15 @@ describe('Screening recommendations cases', () => {
           age: 43,
           gender: 'Female',
           smoker: 'No',
-          postmenopausal: 'No'
+          postmenopausal: 'No',
+          pregnant: 'Yes'
         }
       }
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
@@ -169,6 +176,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
@@ -196,6 +204,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
@@ -227,6 +236,7 @@ describe('Screening recommendations cases', () => {
 
     expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
     expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')

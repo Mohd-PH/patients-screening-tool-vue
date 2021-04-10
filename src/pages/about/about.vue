@@ -22,6 +22,7 @@
             <ol>
               <li>Abdominal Aortic Aneurysm: Screening</li>
               <li>Abnormal Blood Glucose and Type 2 Diabetes Mellitus: Screening</li>
+              <li>Asymptomatic Bacteriuria in Adults: Screening</li>
               <li>Breast Cancer: Screening</li>
               <li>Cervical Cancer: Screening</li>
               <li>Colorectal Cancer: Screening</li>

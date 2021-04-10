@@ -117,6 +117,12 @@ export default {
           recommendation: this.abdominalAorticAneurysm
         })
       }
+      if (this.asymptomaticBacteriuriaInAdults) {
+        screening.push({
+          class: 'asymptomaticBacteriuriaInAdults',
+          recommendation: this.asymptomaticBacteriuriaInAdults
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -380,6 +386,23 @@ Refer to the link for a description of adolescents and adults at increased risk 
           grade: 'C',
           recommendation: `The USPSTF recommends that clinicians selectively offer screening for AAA with ultrasonography in men aged 65 to 75 years who have never smoked rather than routinely screening all men in this group. Evidence indicates that the net benefit of screening all men in this group is small. In determining whether this service is appropriate in individual cases, patients and clinicians should consider the balance of benefits and harms on the basis of evidence relevant to the patient's medical history, family history, other risk factors, and personal values.`,
           date: 'December 10, 2019'
+        }
+      } else {
+        return false
+      }
+    },
+    asymptomaticBacteriuriaInAdults () {
+      if (!this.patientsInformationData) return false
+      //  No screening recommendations for males
+      if (this.patientsInformationData.gender === 'Male') return false
+      if (this.patientsInformationData.age >= 18 && this.patientsInformationData.pregnant === 'Yes') {
+        return {
+          disease: 'Asymptomatic Bacteriuria in Adults',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for asymptomatic bacteriuria using urine culture in pregnant persons.`,
+          date: 'September 24, 2019'
         }
       } else {
         return false
