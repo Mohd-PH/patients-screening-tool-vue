@@ -105,6 +105,12 @@ export default {
           recommendation: this.hepatitisBInfection
         })
       }
+      if (this.hepatitisCInfection) {
+        screening.push({
+          class: 'hepatitisCInfection',
+          recommendation: this.hepatitisCInfection
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -327,6 +333,21 @@ Refer to the link for more information`,
 
 Refer to the link for a description of adolescents and adults at increased risk for infection.`,
           date: 'December 15, 2020'
+        }
+      } else {
+        return false
+      }
+    },
+    hepatitisCInfection () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.age >= 18 && this.patientsInformationData.age <= 79) {
+        return {
+          disease: 'Hepatitis C Virus Infection in Adolescents and Adults',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for hepatitis C virus (HCV) infection in adults aged 18 to 79 years.`,
+          date: 'March 02, 2020'
         }
       } else {
         return false
