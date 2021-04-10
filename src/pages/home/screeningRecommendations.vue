@@ -99,6 +99,12 @@ export default {
           recommendation: this.unhealthyDrugUse
         })
       }
+      if (this.hepatitisBInfection) {
+        screening.push({
+          class: 'hepatitisBInfection',
+          recommendation: this.hepatitisBInfection
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -304,6 +310,23 @@ Refer to the link for more information`,
           recommendation: `The USPSTF recommends screening by asking questions about unhealthy drug use in adults age 18 years or older. Screening should be implemented when services for accurate diagnosis, effective treatment, and appropriate care can be offered or referred. 
 (Screening refers to asking questions about unhealthy drug use, not testing biological specimens.)`,
           date: 'June 09, 2020'
+        }
+      } else {
+        return false
+      }
+    },
+    hepatitisBInfection () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.age >= 10) {
+        return {
+          disease: 'Hepatitis B Virus Infection in Adolescents and Adults',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening',
+          grade: 'B',
+          recommendation: `The USPSTF recommends screening for hepatitis B virus (HBV) infection in adolescents and adults at increased risk for infection.
+
+Refer to the link for a description of adolescents and adults at increased risk for infection.`,
+          date: 'December 15, 2020'
         }
       } else {
         return false
