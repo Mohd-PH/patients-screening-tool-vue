@@ -25,6 +25,7 @@
               <li>Asymptomatic Bacteriuria in Adults: Screening</li>
               <li>Breast Cancer: Screening</li>
               <li>Cervical Cancer: Screening</li>
+              <li>Chlamydia and Gonorrhea: Screening</li>
               <li>Colorectal Cancer: Screening</li>
               <li>Depression in Adults: Screening</li>
               <li>Depression in Children and Adolescents: Screening</li>

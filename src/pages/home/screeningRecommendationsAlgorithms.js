@@ -451,5 +451,22 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  chlamydiaAndGonorrhea () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.age >= 18 && this.patientsInformationData.gender === 'Female') {
+      return {
+        disease: 'Chlamydia and Gonorrhea',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/chlamydia-and-gonorrhea-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for chlamydia and gonorrhea in sexually active women age 24 years and younger and in older women who are at increased risk for infection.`,
+        date: 'September 22, 2014'
+      }
+    } else {
+      return false
+    }
   }
 }
