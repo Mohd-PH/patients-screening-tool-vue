@@ -404,5 +404,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  latentTuberculosisInfection () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 18) {
+      return {
+        disease: 'Latent Tuberculosis Infection',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/latent-tuberculosis-infection-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for latent tuberculosis infection (LTBI) in populations at increased risk.`,
+        date: 'September 06, 2016'
+      }
+    } else {
+      return false
+    }
   }
 }

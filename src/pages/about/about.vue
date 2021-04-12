@@ -32,6 +32,7 @@
               <li>High Blood Pressure in Adults: Screening</li>
               <li>Human Immunodeficiency Virus (HIV) Infection: Screening</li>
               <li>Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening</li>
+              <li>Latent Tuberculosis Infection: Screening</li>
               <li>Lung Cancer: Screening</li>
               <li>Obesity in Children and Adolescents: Screening</li>
               <li>Osteoporosis to Prevent Fractures: Screening</li>
