@@ -37,6 +37,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
@@ -68,6 +69,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
@@ -100,6 +102,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
@@ -107,7 +110,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 20 year old female medically free for depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 20 year old female medically free for depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -115,7 +118,8 @@ describe('Screening recommendations cases', () => {
           age: 20,
           gender: 'Female',
           smoker: 'No',
-          pregnant: 'No'
+          pregnant: 'No',
+          postmenopausal: 'No'
         }
       }
     })
@@ -131,6 +135,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
@@ -138,7 +143,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection and Asymptomatic Bacteriuria', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection, Asymptomatic Bacteriuria and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -163,6 +168,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
@@ -197,6 +203,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
@@ -204,14 +211,15 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 12 year old female medically free for hepatitis B infection', async () => {
+  it('Screens a 12 year old female medically free for hepatitis B infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
         patientsInformationData: {
           age: 12,
           gender: 'Female',
-          smoker: 'No'
+          smoker: 'No',
+          postmenopausal: 'No'
         }
       }
     })
@@ -227,6 +235,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
@@ -261,6 +270,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
     expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')

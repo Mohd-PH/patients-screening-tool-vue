@@ -321,5 +321,24 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  intimatePartnerViolenceElderAbuseAndAbuseOfVulnerableAdults () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.gender === 'Female' && this.patientsInformationData.postmenopausal === 'No') {
+      return {
+        disease: 'Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/intimate-partner-violence-and-abuse-of-elderly-and-vulnerable-adults-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends that clinicians screen for intimate partner violence (IPV) in women of reproductive age and provide or refer women who screen positive to ongoing support services.
+
+        Refer to the link for more information on effective ongoing support services for IPV and for information on IPV in men.`,
+        date: 'October 23, 2018'
+      }
+    } else {
+      return false
+    }
   }
 }

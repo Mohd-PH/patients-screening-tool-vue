@@ -31,6 +31,7 @@
               <li>Hepatitis C Virus Infection in Adolescents and Adults: Screening</li>
               <li>High Blood Pressure in Adults: Screening</li>
               <li>Human Immunodeficiency Virus (HIV) Infection: Screening</li>
+              <li>Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening</li>
               <li>Lung Cancer: Screening</li>
               <li>Osteoporosis to Prevent Fractures: Screening</li>
               <li>Prostate Cancer: Screening</li>
