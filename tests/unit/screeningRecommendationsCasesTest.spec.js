@@ -33,6 +33,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -71,6 +72,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -110,6 +112,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -149,6 +152,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -188,6 +192,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -229,6 +234,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -247,7 +253,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 12 year old female medically free for obesity, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
+  it('Screens a 12 year old female medically free for obesity, depression, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -268,6 +274,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).not.toContain('Depression in Adults')
+    expect(wrapper.text()).toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')
@@ -309,6 +316,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.text()).toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -346,6 +354,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).not.toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')

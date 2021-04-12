@@ -27,6 +27,7 @@
               <li>Cervical Cancer: Screening</li>
               <li>Colorectal Cancer: Screening</li>
               <li>Depression in Adults: Screening</li>
+              <li>Depression in Children and Adolescents: Screening</li>
               <li>Screening for Hepatitis B Virus Infection in Adolescents and Adults</li>
               <li>Hepatitis C Virus Infection in Adolescents and Adults: Screening</li>
               <li>High Blood Pressure in Adults: Screening</li>

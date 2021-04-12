@@ -436,5 +436,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  depressionInChildrenAndAdolescents () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 12 && this.patientsInformationData.age <= 18) {
+      return {
+        disease: 'Depression in Children and Adolescents',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-children-and-adolescents-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for major depressive disorder (MDD) in adolescents aged 12 to 18 years. Screening should be implemented with adequate systems in place to ensure accurate diagnosis, effective treatment, and appropriate follow-up.`,
+        date: 'February 08, 2016'
+      }
+    } else {
+      return false
+    }
   }
 }
