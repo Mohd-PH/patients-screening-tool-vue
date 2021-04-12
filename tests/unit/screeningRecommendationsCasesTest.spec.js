@@ -39,6 +39,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -73,6 +74,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -108,6 +110,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -143,6 +146,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -178,6 +182,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).toContain('Syphilis Infection in Pregnant Women')
@@ -215,6 +220,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -223,7 +229,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 12 year old female medically free for hepatitis B infection and intimate partener violence', async () => {
+  it('Screens a 12 year old female medically free for obesity, hepatitis B infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -250,6 +256,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -287,6 +294,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
@@ -320,6 +328,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
     expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
     expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')

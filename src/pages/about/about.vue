@@ -33,6 +33,7 @@
               <li>Human Immunodeficiency Virus (HIV) Infection: Screening</li>
               <li>Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening</li>
               <li>Lung Cancer: Screening</li>
+              <li>Obesity in Children and Adolescents: Screening</li>
               <li>Osteoporosis to Prevent Fractures: Screening</li>
               <li>Prostate Cancer: Screening</li>
               <li>Syphilis Infection in Pregnant Women: Screening</li>

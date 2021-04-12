@@ -372,5 +372,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  obesityInChildrenAndAdolescents () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 6 && this.patientsInformationData.age <= 18) {
+      return {
+        disease: 'Obesity in Children and Adolescents',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/obesity-in-children-and-adolescents-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends that clinicians screen for obesity in children and adolescents 6 years and older and offer or refer them to comprehensive, intensive behavioral interventions to promote improvements in weight status.`,
+        date: 'June 20, 2017'
+      }
+    } else {
+      return false
+    }
   }
 }
