@@ -14,7 +14,7 @@ No, it hasn't been endorsed by anyone.
 
 ## How to use it?
 
-It can be used in the browser.
+It can be used in the browser, on the following link [https://patientsscreening.mohd.ph/](https://patientsscreening.mohd.ph/)
 
 ## Does it collect any data?
 
