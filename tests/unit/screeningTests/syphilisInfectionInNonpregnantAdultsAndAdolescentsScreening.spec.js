@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Syphilis infection in nonpregnant adults and adolescents screening', (
   // This test follows the syphilis infection in nonpregnant adults and adolescents screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents
   // Last time accessed 12/04/2021
+
+  const screeningData = {
+    class: '.syphilisInfectionInNonpregnantAdultsAndAdolescents',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents',
+    disease: 'Syphilis Infection in Nonpregnant Adults and Adolescents'
+  }
 
   it('Screens a 10 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -27,9 +34,7 @@ describe('Syphilis infection in nonpregnant adults and adolescents screening', (
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInNonpregnantAdultsAndAdolescents').element).toBe()
-    expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 20 year old Male', async () => {
@@ -44,9 +49,7 @@ describe('Syphilis infection in nonpregnant adults and adolescents screening', (
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInNonpregnantAdultsAndAdolescents').element).toBe()
-    expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a pregnant female', async () => {
@@ -62,8 +65,6 @@ describe('Syphilis infection in nonpregnant adults and adolescents screening', (
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInNonpregnantAdultsAndAdolescents').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

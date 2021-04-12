@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Cervical cancer screening', () => {
   // This test follows the cervical cancer screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening
   // Last time accessed 04/04/2021
+
+  const screeningData = {
+    class: '.cervicalCancer',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening',
+    disease: 'Cervical cancer'
+  }
 
   it('Doesn\'t Screen males', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,10 +33,9 @@ describe('Cervical cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('cervicalCancer').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Cervical cancer')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
+
   it('Screens a 21 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
@@ -42,11 +48,9 @@ describe('Cervical cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('cervicalCancer').element).toBe()
-    expect(wrapper.text()).toContain('Recommendation Grade: A')
-    expect(wrapper.text()).toContain('Cervical cancer')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
+
   it('Screens a 65 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
@@ -59,9 +63,6 @@ describe('Cervical cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('cervicalCancer').element).toBe()
-    expect(wrapper.text()).toContain('Recommendation Grade: A')
-    expect(wrapper.text()).toContain('Cervical cancer')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

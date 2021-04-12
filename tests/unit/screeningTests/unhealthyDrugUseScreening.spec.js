@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Unhealthy drug use screening', () => {
   // This test follows the unhealthy drug use screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/drug-use-illicit-screening
   // Last time accessed 10/04/2021
+
+  const screeningData = {
+    class: '.unhealthyDrugUse',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/drug-use-illicit-screening',
+    disease: 'Unhealthy Drug Use'
+  }
 
   it('Screen everyone who is 18 year old or older', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,8 +33,6 @@ describe('Unhealthy drug use screening', () => {
       }
     })
 
-    expect(wrapper.find('unhealthyDrugUse').element).toBe()
-    expect(wrapper.text()).toContain('Unhealthy Drug Use')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/drug-use-illicit-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Latent tuberculosis infection screening', () => {
   // This test follows the latent tuberculosis infection screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/latent-tuberculosis-infection-screening
   // Last time accessed 12/04/2021
+
+  const screeningData = {
+    class: '.latentTuberculosisInfection',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/latent-tuberculosis-infection-screening',
+    disease: 'Latent Tuberculosis Infection'
+  }
 
   it('Screens everyone who is 18 year old or older', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,8 +33,6 @@ describe('Latent tuberculosis infection screening', () => {
       }
     })
 
-    expect(wrapper.find('latentTuberculosisInfection').element).toBe()
-    expect(wrapper.text()).toContain('Latent Tuberculosis Infection')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/latent-tuberculosis-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

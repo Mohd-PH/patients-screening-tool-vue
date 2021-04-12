@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Breast cancer screening', () => {
   // This test follows the breast cancer screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
   // Last time accessed 04/04/2021
+
+  const screeningData = {
+    class: '.breastCancer',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening',
+    disease: 'Breast cancer'
+  }
 
   it('Doesn\'t Screen males', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,10 +33,9 @@ describe('Breast cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('breastCancer').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Breast cancer')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
+
   it('Screens a 55 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
@@ -42,11 +48,9 @@ describe('Breast cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('breastCancer').element).toBe()
-    expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Breast cancer')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
+
   it('Screens a 45 year old female who has a high risk', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
@@ -59,9 +63,6 @@ describe('Breast cancer screening', () => {
       }
     })
 
-    expect(wrapper.find('breastCancer').element).toBe()
-    expect(wrapper.text()).toContain('Recommendation Grade: C')
-    expect(wrapper.text()).toContain('Breast cancer')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

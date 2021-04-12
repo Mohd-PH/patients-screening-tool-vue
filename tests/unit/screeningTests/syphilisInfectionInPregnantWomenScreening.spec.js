@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Syphilis infection in pregnant women screening', () => {
   // This test follows the syphilis infection in pregnant women screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening
   // Last time accessed 12/04/2021
+
+  const screeningData = {
+    class: '.syphilisInfectionInPregnantWomen',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening',
+    disease: 'Syphilis Infection in Pregnant Women'
+  }
 
   it('Screens any pregnant female', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -27,9 +34,7 @@ describe('Syphilis infection in pregnant women screening', () => {
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInPregnantWomen').element).toBe()
-    expect(wrapper.text()).toContain('Syphilis Infection in Pregnant Women')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a non-pregnant female', async () => {
@@ -45,9 +50,7 @@ describe('Syphilis infection in pregnant women screening', () => {
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInPregnantWomen').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a male patient', async () => {
@@ -62,8 +65,6 @@ describe('Syphilis infection in pregnant women screening', () => {
       }
     })
 
-    expect(wrapper.find('syphilisInfectionInPregnantWomen').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

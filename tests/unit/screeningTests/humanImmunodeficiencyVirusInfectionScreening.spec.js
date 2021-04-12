@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Human immunodeficiency virus infection screening', () => {
   // This test follows the human immunodeficiency virus infection screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening
   // Last time accessed 12/04/2021
+
+  const screeningData = {
+    class: '.humanImmunodeficiencyVirusInfection',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening',
+    disease: 'Human Immunodeficiency Virus (HIV) Infection'
+  }
 
   it('Screens any pregnant female who', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -27,9 +34,7 @@ describe('Human immunodeficiency virus infection screening', () => {
       }
     })
 
-    expect(wrapper.find('humanImmunodeficiencyVirusInfection').element).toBe()
-    expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 15 year old male', async () => {
@@ -44,9 +49,7 @@ describe('Human immunodeficiency virus infection screening', () => {
       }
     })
 
-    expect(wrapper.find('humanImmunodeficiencyVirusInfection').element).toBe()
-    expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 65 year old male', async () => {
@@ -61,9 +64,7 @@ describe('Human immunodeficiency virus infection screening', () => {
       }
     })
 
-    expect(wrapper.find('humanImmunodeficiencyVirusInfection').element).toBe()
-    expect(wrapper.text()).toContain('Human Immunodeficiency Virus (HIV) Infection')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a 66 year old female', async () => {
@@ -78,8 +79,6 @@ describe('Human immunodeficiency virus infection screening', () => {
       }
     })
 
-    expect(wrapper.find('humanImmunodeficiencyVirusInfection').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

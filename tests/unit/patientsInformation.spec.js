@@ -50,13 +50,13 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.gender).toBe('Male')
 
     // Pack years field is hidden
-    expect(wrapper.find('#input-packYears').element).toBeFalsy()
+    expect(wrapper.find('#input-packYears').element).toBeUndefined()
 
     await wrapper.find('#smoker-yes-button').trigger('click')
     expect(wrapper.vm.$data.form.smoker).toBe('Yes')
 
     // Pack years field is visible
-    expect(wrapper.find('#input-packYears').element).not.toBe(undefined)
+    expect(wrapper.find('#input-packYears').element).not.toBeUndefined()
 
     const packYears = wrapper.find('#input-packYears')
     await packYears.setValue(22)
@@ -85,13 +85,13 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.find('#input-age').element.value).toBe('55')
 
     // Postmenopausal option is hidden
-    expect(wrapper.find('#input-postmenopausal').element).toBeFalsy()
+    expect(wrapper.find('#input-postmenopausal').element).toBeUndefined()
 
     await wrapper.find('#gender-female-button').trigger('click')
     expect(wrapper.vm.$data.form.gender).toBe('Female')
 
     // Postmenopausal option is visible
-    expect(wrapper.find('#input-postmenopausal').element).not.toBe(undefined)
+    expect(wrapper.find('#input-postmenopausal').element).not.toBeUndefined()
 
     await wrapper.find('#smoker-no-button').trigger('click')
     expect(wrapper.vm.$data.form.smoker).toBe('No')
@@ -126,13 +126,13 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.gender).toBe('Female')
 
     // Postmenopausal option is hidden
-    expect(wrapper.find('#input-pregnant').element).toBeFalsy()
+    expect(wrapper.find('#input-pregnant').element).toBeUndefined()
 
     await wrapper.find('#postmenopausal-no-button').trigger('click')
     expect(wrapper.vm.$data.form.postmenopausal).toBe('No')
 
     // Postmenopausal option is visible
-    expect(wrapper.find('#input-pregnant').element).not.toBe(undefined)
+    expect(wrapper.find('#input-pregnant').element).not.toBeUndefined()
 
     await wrapper.find('#pregnant-yes-button').trigger('click')
     expect(wrapper.vm.$data.form.pregnant).toBe('Yes')

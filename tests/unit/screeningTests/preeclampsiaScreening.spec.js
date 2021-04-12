@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Preeclampsia screening', () => {
   // This test follows the preeclampsia screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening
   // Last time accessed 12/04/2021
+
+  const screeningData = {
+    class: '.preeclampsia',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening',
+    disease: 'Preeclampsia'
+  }
 
   it('Screens any pregnant patient', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -27,9 +34,7 @@ describe('Preeclampsia screening', () => {
       }
     })
 
-    expect(wrapper.find('preeclampsia').element).toBe()
-    expect(wrapper.text()).toContain('Preeclampsia')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a non-pregnant female', async () => {
@@ -45,9 +50,7 @@ describe('Preeclampsia screening', () => {
       }
     })
 
-    expect(wrapper.find('preeclampsia').element).toBe(undefined)
-    expect(wrapper.text()).not.toContain('Preeclampsia')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a male patient', async () => {
@@ -62,8 +65,6 @@ describe('Preeclampsia screening', () => {
       }
     })
 
-    expect(wrapper.find('preeclampsia').element).toBe(undefined)
-    expect(wrapper.text()).not.toContain('Preeclampsia')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

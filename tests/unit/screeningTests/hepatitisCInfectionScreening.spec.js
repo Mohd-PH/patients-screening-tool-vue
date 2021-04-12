@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Hepatitis C infection screening', () => {
   // This test follows the hepatitis C virus Infection in adolescents and adults recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening
   // Last time accessed 10/04/2021
+
+  const screeningData = {
+    class: '.hepatitisCInfection',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening',
+    disease: 'Hepatitis C Virus Infection in Adolescents and Adults'
+  }
 
   it('Screens a 18 year female', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,9 +33,7 @@ describe('Hepatitis C infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisCInfection').element).toBe()
-    expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 79 year male', async () => {
@@ -43,9 +48,7 @@ describe('Hepatitis C infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisCInfection').element).toBe()
-    expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\' screen a 10 year old male', async () => {
@@ -60,9 +63,7 @@ describe('Hepatitis C infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisCInfection').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\' screen a 80 year old male', async () => {
@@ -77,8 +78,6 @@ describe('Hepatitis C infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisCInfection').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

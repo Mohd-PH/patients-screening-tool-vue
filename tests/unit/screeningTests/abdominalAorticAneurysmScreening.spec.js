@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Abdomin aourtic aneurysm screening', () => {
   // This test follows the abdomin aourtic aneurysm screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening
   // Last time accessed 10/04/2021
+
+  const screeningData = {
+    class: '.abdominalAorticAneurysm',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening',
+    disease: 'Abdominal Aortic Aneurysm'
+  }
 
   it('Doesn\'t Screen females', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,9 +33,7 @@ describe('Abdomin aourtic aneurysm screening', () => {
       }
     })
 
-    expect(wrapper.find('abdominalAorticAneurysm').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t Screen a 64 year old male', async () => {
@@ -43,9 +48,7 @@ describe('Abdomin aourtic aneurysm screening', () => {
       }
     })
 
-    expect(wrapper.find('abdominalAorticAneurysm').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 70 year old male non-smoker', async () => {
@@ -59,10 +62,7 @@ describe('Abdomin aourtic aneurysm screening', () => {
         }
       }
     })
-
-    expect(wrapper.find('abdominalAorticAneurysm').element).toBe()
-    expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 65 year old male smoker', async () => {
@@ -77,9 +77,7 @@ describe('Abdomin aourtic aneurysm screening', () => {
       }
     })
 
-    expect(wrapper.find('abdominalAorticAneurysm').element).toBe()
-    expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 75 year old male ex-smoker', async () => {
@@ -94,8 +92,6 @@ describe('Abdomin aourtic aneurysm screening', () => {
       }
     })
 
-    expect(wrapper.find('abdominalAorticAneurysm').element).toBe()
-    expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

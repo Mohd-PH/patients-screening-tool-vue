@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Hepatitis B infection screening', () => {
   // This test follows the hepatitis B virus Infection in adolescents and adults recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening
   // Last time accessed 10/04/2021
+
+  const screeningData = {
+    class: '.hepatitisBInfection',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening',
+    disease: 'Hepatitis B Virus Infection in Adolescents and Adults'
+  }
 
   it('Screen everyone who is 18 year old or older', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -26,9 +33,7 @@ describe('Hepatitis B infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisBInfection').element).toBe()
-    expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screen everyone who is 10 year old or older', async () => {
@@ -43,8 +48,6 @@ describe('Hepatitis B infection screening', () => {
       }
     })
 
-    expect(wrapper.find('hepatitisBInfection').element).toBe()
-    expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Asymptomatic bacteriuria in adults screening', () => {
   // This test follows the asymptomatic bacteriuria in adults screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening
   // Last time accessed 10/04/2021
+
+  const screeningData = {
+    class: '.asymptomaticBacteriuriaInAdults',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening',
+    disease: 'Asymptomatic Bacteriuria in Adults'
+  }
 
   it('Screens any pregnant female who is 18 year old or older', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -27,9 +34,7 @@ describe('Asymptomatic bacteriuria in adults screening', () => {
       }
     })
 
-    expect(wrapper.find('asymptomaticBacteriuriaInAdults').element).toBe()
-    expect(wrapper.text()).toContain('Asymptomatic Bacteriuria in Adults')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a non-pregnant female', async () => {
@@ -45,9 +50,7 @@ describe('Asymptomatic bacteriuria in adults screening', () => {
       }
     })
 
-    expect(wrapper.find('asymptomaticBacteriuriaInAdults').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t screen a male patient', async () => {
@@ -62,8 +65,6 @@ describe('Asymptomatic bacteriuria in adults screening', () => {
       }
     })
 
-    expect(wrapper.find('asymptomaticBacteriuriaInAdults').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/asymptomatic-bacteriuria-in-adults-screening')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })

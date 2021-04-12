@@ -4,6 +4,7 @@ import {
 } from '@vue/test-utils'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import screeningRecommendations from '@/pages/home/screeningRecommendations.vue'
+import utilities from '../utilities'
 
 const localVue = createLocalVue()
 localVue.use(BootstrapVue)
@@ -13,6 +14,12 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
   // This test follows the abnormal blood glucose and type 2 diabetes mellitus in adults screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes
   // Last time accessed 05/04/2021
+
+  const screeningData = {
+    class: '.AbnormalBloodGlucoseAndType2DiabetesMellitus',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes',
+    disease: 'Abnormal Blood Glucose and Type 2 Diabetes Mellitus'
+  }
 
   it('Screens a 40 year old male who is overweight "BMI = 27"', async () => {
     const wrapper = mount(screeningRecommendations, {
@@ -29,9 +36,7 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
       }
     })
 
-    expect(wrapper.find('AbnormalBloodGlucoseAndType2DiabetesMellitus').element).toBe()
-    expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens a 70 year old male who is obese "BMI = 33.1"', async () => {
@@ -49,9 +54,7 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
       }
     })
 
-    expect(wrapper.find('AbnormalBloodGlucoseAndType2DiabetesMellitus').element).toBe()
-    expect(wrapper.text()).toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
-    expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes')
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t Screen 50 year old female who had normal weight "BMI = 24.2"', async () => {
@@ -69,9 +72,7 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
       }
     })
 
-    expect(wrapper.find('AbnormalBloodGlucoseAndType2DiabetesMellitus').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
   it('Doesn\'t Screen 35 year old male who is obese "BMI = 31.5"', async () => {
@@ -89,8 +90,6 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
       }
     })
 
-    expect(wrapper.find('AbnormalBloodGlucoseAndType2DiabetesMellitus').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
-    expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes')
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 })
