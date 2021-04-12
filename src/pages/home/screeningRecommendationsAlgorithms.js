@@ -340,5 +340,22 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  syphilisInfectionInPregnantWomen () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.pregnant === 'Yes') {
+      return {
+        disease: 'Syphilis Infection in Pregnant Women',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening',
+        grade: 'A',
+        recommendation: `The USPSTF recommends early screening for syphilis infection in all pregnant women.`,
+        date: 'September 04, 2018'
+      }
+    } else {
+      return false
+    }
   }
 }

@@ -41,6 +41,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
@@ -73,6 +74,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
@@ -106,6 +108,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
@@ -139,11 +142,12 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection, Asymptomatic Bacteriuria and intimate partener violence', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection, syphilis infection,Asymptomatic Bacteriuria and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -172,6 +176,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
@@ -207,6 +212,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })
@@ -219,7 +225,8 @@ describe('Screening recommendations cases', () => {
           age: 12,
           gender: 'Female',
           smoker: 'No',
-          postmenopausal: 'No'
+          postmenopausal: 'No',
+          pregnant: 'No'
         }
       }
     })
@@ -239,6 +246,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).not.toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Unhealthy Drug Use')
   })
@@ -274,6 +282,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
   })

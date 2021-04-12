@@ -35,6 +35,7 @@
               <li>Lung Cancer: Screening</li>
               <li>Osteoporosis to Prevent Fractures: Screening</li>
               <li>Prostate Cancer: Screening</li>
+              <li>Syphilis Infection in Pregnant Women: Screening</li>
               <li>Unhealthy Alcohol Use in Adolescents and Adults: Screening and Behavioral Counseling Interventions</li>
               <li>Unhealthy Drug Use: Screening</li>
             </ol>
