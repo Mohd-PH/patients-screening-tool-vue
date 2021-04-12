@@ -44,6 +44,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 60 year old male smoker for 30 pack year for lung cancer, prostate cancer, colorectal cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection and hepatitis C infection', async () => {
@@ -77,6 +78,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 55 year old female postmenopausal smoker for 19 pack year for breast cancer, cervical cancer, osteoporosis, colorectal cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection and hepatitis C infection', async () => {
@@ -111,6 +113,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 20 year old female medically free for depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection and intimate partener violence', async () => {
@@ -145,6 +148,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection, hepatitis C infection, syphilis infection,Asymptomatic Bacteriuria and intimate partener violence', async () => {
@@ -179,6 +183,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 55 year old male obese (BMI = 33) and smoker for 20 pack year but medically free for prostate cancer, colorectal cancer, lung cancer, abnormal BG and T2DM, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, hepatitis B infection and hepatitis C infection', async () => {
@@ -215,6 +220,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 12 year old female medically free for hepatitis B infection and intimate partener violence', async () => {
@@ -249,6 +255,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).not.toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
   it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for abdominal aortic aneurysm, colorectal cancer, depression, hepatitis B infection, hepatitis C infection, high blood pressure, lung cancer, unhealthy alcohol use and unhealthy drug use', async () => {
@@ -285,5 +292,39 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
     expect(wrapper.text()).toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
+  })
+
+  it('Screens a 4 year old male for vision', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 4,
+          gender: 'Male',
+          smoker: 'No'
+        }
+      }
+    })
+
+    expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
+    expect(wrapper.text()).not.toContain('Abnormal Blood Glucose and Type 2 Diabetes Mellitus')
+    expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
+    expect(wrapper.text()).not.toContain('Breast cancer')
+    expect(wrapper.text()).not.toContain('Cervical cancer')
+    expect(wrapper.text()).not.toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Depression in Adults')
+    expect(wrapper.text()).not.toContain('Hepatitis B Virus Infection in Adolescents and Adults')
+    expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
+    expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')
+    expect(wrapper.text()).not.toContain('Human Immunodeficiency Virus (HIV) Infection')
+    expect(wrapper.text()).not.toContain('Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults')
+    expect(wrapper.text()).not.toContain('Lung cancer')
+    expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
+    expect(wrapper.text()).not.toContain('Unhealthy Alcohol Use in Adolescents and Adults')
+    expect(wrapper.text()).not.toContain('Unhealthy Drug Use')
+    expect(wrapper.text()).toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 })

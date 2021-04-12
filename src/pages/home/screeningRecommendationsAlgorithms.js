@@ -357,5 +357,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  visioninChildrenAges6Monthsto5Years () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 3 && this.patientsInformationData.age <= 5) {
+      return {
+        disease: 'Vision in Children Ages 6 Months to 5 Years',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vision-in-children-ages-6-months-to-5-years-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends vision screening at least once in all children aged 3 to 5 years to detect amblyopia or its risk factors.`,
+        date: 'September 05, 2017'
+      }
+    } else {
+      return false
+    }
   }
 }
