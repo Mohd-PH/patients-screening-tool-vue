@@ -64,7 +64,7 @@ describe('Lung cancer screening', () => {
 
     expect(wrapper.find('lungCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Lung cancer screening')
+    expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening')
   })
   it('Screens a 80 year old female who smoked 30 pack year', async () => {
@@ -82,7 +82,7 @@ describe('Lung cancer screening', () => {
 
     expect(wrapper.find('lungCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: B')
-    expect(wrapper.text()).toContain('Lung cancer screening')
+    expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening')
   })
 
@@ -100,7 +100,7 @@ describe('Lung cancer screening', () => {
     })
 
     expect(wrapper.find('lungCancer').element).toBe()
-    expect(wrapper.text()).toContain('Lung cancer screening')
+    expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening')
   })
 })

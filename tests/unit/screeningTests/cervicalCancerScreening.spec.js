@@ -44,7 +44,7 @@ describe('Cervical cancer screening', () => {
 
     expect(wrapper.find('cervicalCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: A')
-    expect(wrapper.text()).toContain('Cervical cancer screening')
+    expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening')
   })
   it('Screens a 65 year old female', async () => {
@@ -61,7 +61,7 @@ describe('Cervical cancer screening', () => {
 
     expect(wrapper.find('cervicalCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: A')
-    expect(wrapper.text()).toContain('Cervical cancer screening')
+    expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening')
   })
 })

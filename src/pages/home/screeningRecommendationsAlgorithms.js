@@ -3,7 +3,7 @@ module.exports = {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 75) {
       return {
-        disease: 'Colorectal cancer screening',
+        disease: 'Colorectal cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
         grade: 'A',
@@ -14,7 +14,7 @@ The risks and benefits of different screening methods vary. refer to the link fo
       }
     } else if (this.patientsInformationData.age >= 76 && this.patientsInformationData.age <= 85) {
       return {
-        disease: 'Colorectal cancer screening',
+        disease: 'Colorectal cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
         grade: 'C',
@@ -35,7 +35,7 @@ Screening would be most appropriate among adults who 1) are healthy enough to un
     if (this.patientsInformationData.gender === 'Male') return false
     if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 74) {
       return {
-        disease: 'Breast cancer screening',
+        disease: 'Breast cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening',
         grade: 'B',
@@ -44,7 +44,7 @@ Screening would be most appropriate among adults who 1) are healthy enough to un
       }
     } else if (this.patientsInformationData.age >= 40 && this.patientsInformationData.age <= 49) {
       return {
-        disease: 'Breast cancer screening',
+        disease: 'Breast cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening',
         grade: 'C',
@@ -69,7 +69,7 @@ Refer to the link for more information for information on implementation of the 
     if (this.patientsInformationData.gender === 'Female') return false
     if (this.patientsInformationData.age >= 55 && this.patientsInformationData.age <= 69) {
       return {
-        disease: 'Prostate cancer screening',
+        disease: 'Prostate cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening',
         grade: 'C',
@@ -86,7 +86,7 @@ Refer to the link for more information for information on implementation of the 
     if (this.patientsInformationData.gender === 'Male') return false
     if (this.patientsInformationData.age >= 21 && this.patientsInformationData.age <= 65) {
       return {
-        disease: 'Cervical cancer screening',
+        disease: 'Cervical cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/cervical-cancer-screening',
         grade: 'A',
@@ -107,7 +107,7 @@ Refer to the link for the relative benefits and harms of alternative screening s
     if (this.patientsInformationData.packYears < 20) return false
     if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 80 && this.patientsInformationData.packYears >= 20) {
       return {
-        disease: 'Lung cancer screening',
+        disease: 'Lung cancer',
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening',
         grade: 'B',

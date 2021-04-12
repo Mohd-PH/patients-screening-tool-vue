@@ -79,7 +79,7 @@ describe('Prostate cancer screening', () => {
 
     expect(wrapper.find('prostateCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: C')
-    expect(wrapper.text()).toContain('Prostate cancer screening')
+    expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening')
   })
   it('Screens a 69 year old male', async () => {
@@ -96,7 +96,7 @@ describe('Prostate cancer screening', () => {
 
     expect(wrapper.find('prostateCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: C')
-    expect(wrapper.text()).toContain('Prostate cancer screening')
+    expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening')
   })
 })

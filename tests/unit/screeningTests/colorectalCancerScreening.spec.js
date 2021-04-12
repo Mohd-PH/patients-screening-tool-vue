@@ -28,7 +28,7 @@ describe('Colorectal cancer screening', () => {
 
     expect(wrapper.find('colorectalCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: C')
-    expect(wrapper.text()).toContain('Colorectal cancer screening')
+    expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening')
   })
   it('Screens for 55 years old female', async () => {
@@ -45,7 +45,7 @@ describe('Colorectal cancer screening', () => {
 
     expect(wrapper.find('colorectalCancer').element).toBe()
     expect(wrapper.text()).toContain('Recommendation Grade: A')
-    expect(wrapper.text()).toContain('Colorectal cancer screening')
+    expect(wrapper.text()).toContain('Colorectal cancer')
     expect(wrapper.html()).toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening')
   })
   it('Doesn\'t Screen for 49 years old Male', async () => {
@@ -60,7 +60,7 @@ describe('Colorectal cancer screening', () => {
       }
     })
     expect(wrapper.find('colorectalCancer').element).toBeFalsy()
-    expect(wrapper.text()).not.toContain('Colorectal cancer screening')
+    expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.html()).not.toContain('https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening')
   })
 })
