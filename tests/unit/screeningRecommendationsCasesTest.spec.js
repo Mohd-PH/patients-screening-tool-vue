@@ -48,6 +48,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -90,6 +91,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -133,6 +135,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -176,6 +179,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -183,7 +187,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, gestational diabetes mellitus, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, gestational diabetes mellitus, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, Rh(D) incompatibility, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -219,6 +223,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -264,6 +269,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -307,6 +313,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).not.toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -352,6 +359,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).toContain('Unhealthy Alcohol Use in Adolescents and Adults')
@@ -393,6 +401,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
+    expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Nonpregnant Adults and Adolescents')
     expect(wrapper.text()).not.toContain('Syphilis Infection in Pregnant Women')
     expect(wrapper.text()).not.toContain('Unhealthy Alcohol Use in Adolescents and Adults')

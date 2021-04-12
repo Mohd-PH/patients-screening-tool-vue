@@ -500,5 +500,39 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  rhDIncompatibility () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.pregnant === 'Yes') {
+      return {
+        disease: 'Rh(D) Incompatibility',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/rh-d-incompatibility-screening',
+        grade: 'A',
+        recommendation: `The USPSTF strongly recommends Rh(D) blood typing and antibody testing for all pregnant women during their first visit for pregnancy-related care.`,
+        date: 'February 15, 2004'
+      }
+    } else {
+      return false
+    }
+  },
+  rhDIncompatibilityUnsensitized () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.pregnant === 'Yes') {
+      return {
+        disease: 'Rh(D) Incompatibility',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/rh-d-incompatibility-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends repeated Rh(D) antibody testing for all unsensitized Rh(D)-negative women at 24 to 28 weeks' gestation, unless the biological father is known to be Rh(D)-negative.`,
+        date: 'February 15, 2004'
+      }
+    } else {
+      return false
+    }
   }
 }
