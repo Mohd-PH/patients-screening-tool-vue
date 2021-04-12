@@ -14,7 +14,7 @@ describe('Syphilis infection in pregnant women screening', () => {
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening
   // Last time accessed 12/04/2021
 
-  it('Screens any pregnant female who is 18 year old or older', async () => {
+  it('Screens any pregnant female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
