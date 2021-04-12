@@ -123,6 +123,12 @@ export default {
           recommendation: this.asymptomaticBacteriuriaInAdults
         })
       }
+      if (this.humanImmunodeficiencyVirusInfection) {
+        screening.push({
+          class: 'humanImmunodeficiencyVirusInfection',
+          recommendation: this.humanImmunodeficiencyVirusInfection
+        })
+      }
       return screening
     },
     colorectalCancer () {
@@ -403,6 +409,31 @@ Refer to the link for a description of adolescents and adults at increased risk 
           grade: 'B',
           recommendation: `The USPSTF recommends screening for asymptomatic bacteriuria using urine culture in pregnant persons.`,
           date: 'September 24, 2019'
+        }
+      } else {
+        return false
+      }
+    },
+    humanImmunodeficiencyVirusInfection () {
+      if (!this.patientsInformationData) return false
+      if (this.patientsInformationData.pregnant === 'Yes') {
+        return {
+          disease: 'Human Immunodeficiency Virus (HIV) Infection',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening',
+          grade: 'A',
+          recommendation: `The USPSTF recommends that clinicians screen for HIV infection in all pregnant persons, including those who present in labor or at delivery whose HIV status is unknown.`,
+          date: 'June 11, 2019'
+        }
+      } else if (this.patientsInformationData.age >= 15 && this.patientsInformationData.age <= 65) {
+        return {
+          disease: 'Human Immunodeficiency Virus (HIV) Infection',
+          organization: 'U.S. Preventive Services Task Force',
+          link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening',
+          grade: 'A',
+          recommendation: `The USPSTF recommends that clinicians screen for HIV infection in adolescents and adults aged 15 to 65 years. Younger adolescents and older adults who are at increased risk of infection should also be screened.
+Refer to the link for more information about assessment of risk, screening intervals, and rescreening in pregnancy.`,
+          date: 'June 11, 2019'
         }
       } else {
         return false
