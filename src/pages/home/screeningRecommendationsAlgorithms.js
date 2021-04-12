@@ -306,5 +306,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  unhealthyAlcoholUseinAdolescentsandAdults () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 18) {
+      return {
+        disease: 'Unhealthy Alcohol Use in Adolescents and Adults',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for unhealthy alcohol use in primary care settings in adults 18 years or older, including pregnant women, and providing persons engaged in risky or hazardous drinking with brief behavioral counseling interventions to reduce unhealthy alcohol use.`,
+        date: 'November 13, 2018'
+      }
+    } else {
+      return false
+    }
   }
 }
