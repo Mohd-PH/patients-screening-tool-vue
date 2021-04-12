@@ -58,5 +58,7 @@ In the time being, it covers the recommendations made by the USPSTF for the foll
 In the time being, it covers the recommendations made by the USPSTF grade A,B and C:
 
 **A**. The USPSTF recommends the service. There is high certainty that the net benefit is substantial.
+
 **B**. The USPSTF recommends the service. There is high certainty that the net benefit is moderate or there is moderate certainty that the net benefit is moderate to substantial.
+
 **C**. The USPSTF recommends selectively offering or providing this service to individual patients based on professional judgment and patient preferences. There is at least moderate certainty that the net benefit is small.
