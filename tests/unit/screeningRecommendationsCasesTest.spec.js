@@ -234,7 +234,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Unhealthy Drug Use')
   })
 
-  it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for hepatitis B infection and unhealthy alcohol use', async () => {
+  it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for abdominal aortic aneurysm, colorectal cancer, depression, hepatitis B infection, hepatitis C infection, high blood pressure, lung cancer, unhealthy alcohol use and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
