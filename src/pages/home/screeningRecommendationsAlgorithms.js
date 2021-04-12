@@ -483,5 +483,22 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  gestationalDiabetesMellitus () {
+    if (!this.patientsInformationData) return false
+    //  No screening recommendations for males
+    if (this.patientsInformationData.gender === 'Male') return false
+    if (this.patientsInformationData.pregnant === 'Yes') {
+      return {
+        disease: 'Gestational Diabetes Mellitus',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/gestational-diabetes-mellitus-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for gestational diabetes mellitus (GDM) in asymptomatic pregnant women after 24 weeks of gestation.`,
+        date: 'January 14, 2014'
+      }
+    } else {
+      return false
+    }
   }
 }

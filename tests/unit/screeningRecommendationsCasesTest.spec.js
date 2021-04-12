@@ -36,6 +36,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -77,6 +78,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -119,6 +121,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -161,6 +164,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -179,7 +183,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, gestational diabetes mellitus, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -203,6 +207,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -247,6 +252,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -289,6 +295,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).not.toContain('Depression in Adults')
     expect(wrapper.text()).toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')
@@ -333,6 +340,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).toContain('High Blood Pressure in Adults')
@@ -373,6 +381,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).not.toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
+    expect(wrapper.text()).not.toContain('Gestational Diabetes Mellitus')
     expect(wrapper.text()).not.toContain('Hepatitis B Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('Hepatitis C Virus Infection in Adolescents and Adults')
     expect(wrapper.text()).not.toContain('High Blood Pressure in Adults')
