@@ -468,5 +468,20 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  dentalCariesInChildrenFromBirthThroughAge5Years () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 0.5 && this.patientsInformationData.age <= 5) {
+      return {
+        disease: 'Dental Caries in Children from Birth Through Age 5 Years',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/dental-caries-in-children-from-birth-through-age-5-years-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends that primary care clinicians prescribe oral fluoride supplementation starting at age 6 months for children whose water supply is  deficient in fluoride, and it recommends that primary care clinicians apply fluoride varnish to the primary teeth of all infants and children starting at the age of primary tooth  eruption.`,
+        date: 'May 05, 2014'
+      }
+    } else {
+      return false
+    }
   }
 }

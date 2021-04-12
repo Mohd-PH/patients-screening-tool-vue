@@ -27,6 +27,7 @@
               <li>Cervical Cancer: Screening</li>
               <li>Chlamydia and Gonorrhea: Screening</li>
               <li>Colorectal Cancer: Screening</li>
+              <li>Dental Caries in Children from Birth Through Age 5 Years: Screening</li>
               <li>Depression in Adults: Screening</li>
               <li>Depression in Children and Adolescents: Screening</li>
               <li>Screening for Hepatitis B Virus Infection in Adolescents and Adults</li>

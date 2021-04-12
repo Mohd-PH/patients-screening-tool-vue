@@ -33,6 +33,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -73,6 +74,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -114,6 +116,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -155,6 +158,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -196,6 +200,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Cervical cancer')
     expect(wrapper.text()).toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -239,6 +244,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -280,6 +286,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).not.toContain('Depression in Adults')
     expect(wrapper.text()).toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -323,6 +330,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).toContain('Colorectal cancer')
+    expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).toContain('Hepatitis B Virus Infection in Adolescents and Adults')
@@ -343,7 +351,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 4 year old male for vision', async () => {
+  it('Screens a 4 year old male for vision and dental caries', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -362,6 +370,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
+    expect(wrapper.text()).toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).not.toContain('Depression in Adults')
     expect(wrapper.text()).not.toContain('Depression in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Hepatitis B Virus Infection in Adolescents and Adults')
