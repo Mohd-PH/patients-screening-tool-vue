@@ -419,5 +419,22 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  syphilisInfectionInNonpregnantAdultsAndAdolescents () {
+    if (!this.patientsInformationData) return false
+    // No screening for pregnant patients
+    if (this.patientsInformationData.pregnant === 'Yes') return false
+    if (this.patientsInformationData.age >= 10) {
+      return {
+        disease: 'Syphilis Infection in Nonpregnant Adults and Adolescents',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents',
+        grade: 'A',
+        recommendation: `The USPSTF recommends screening for syphilis infection in persons who are at increased risk for infection.`,
+        date: 'June 07, 2016'
+      }
+    } else {
+      return false
+    }
   }
 }
