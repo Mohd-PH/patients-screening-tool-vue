@@ -82,6 +82,17 @@
         </b-card-body>
       </b-collapse>
     </b-card>
+
+    <b-card no-body class="mb-1 mx-3">
+      <b-card-header header-tag="header" class="p-1" role="tab">
+        <b-button block v-b-toggle.accordion-5 variant="info">Can I get the source code for this tool?</b-button>
+      </b-card-header>
+      <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
+        <b-card-body>
+          <b-card-text>Yes you can get the source code on <a href="https://github.com/Mohd-PH/patients-screening-tool-vue" target="_blank"><b-icon icon="github"></b-icon> Github</a></b-card-text>
+        </b-card-body>
+      </b-collapse>
+    </b-card>
   </div>
 </template>
 

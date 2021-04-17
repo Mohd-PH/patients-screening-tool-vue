@@ -9,6 +9,7 @@
         <b-navbar-nav>
           <router-link tag="b-nav-item" to="/" exact-active-class="active">Home</router-link>
           <router-link tag="b-nav-item" to="/about" exact-active-class="active">About</router-link>
+          <b-nav-item href="https://github.com/Mohd-PH/patients-screening-tool-vue" target="_blank"><b-icon icon="github"></b-icon> Github</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
