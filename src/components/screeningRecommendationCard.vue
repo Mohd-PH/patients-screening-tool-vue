@@ -10,7 +10,7 @@
       <p>Recommendation Grade: <b v-text="grade" class="grade" :title="gradeDescription"></b></p>
       <hr>
       <b-row align-v="center">
-        <b-col class="text-left pl-4">
+        <b-col class="text-left pl-4" title="DD/MM/YYYY">
           <b-icon icon="calendar2-date"  scale="1.4"></b-icon>&nbsp;<em class="pl-2" v-text="date"></em>
         </b-col>
         <b-col class="text-right">
