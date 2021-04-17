@@ -7,12 +7,18 @@
         <h6 class="mb-0" v-text="organization"></h6>
       </template>
       <b-card-text v-text="recommendation"></b-card-text>
-      <p>Recommendation Grade: <b v-text="grade" class="grade" :title="gradeDescription"></b>, dated <em v-text="date"></em></p>
-      <div class="text-right">
-        <b-button :href="link" variant="primary" target="_blank">
-          Recommendation <b-icon icon="box-arrow-up-right" scale="0.8"></b-icon>
-        </b-button>
-      </div>
+      <p>Recommendation Grade: <b v-text="grade" class="grade" :title="gradeDescription"></b></p>
+      <hr>
+      <b-row align-v="center">
+        <b-col class="text-left pl-4">
+          <b-icon icon="calendar2-date"  scale="1.4"></b-icon>&nbsp;<em class="pl-2" v-text="date"></em>
+        </b-col>
+        <b-col class="text-right">
+          <b-button :href="link" variant="primary" target="_blank">
+            Recommendation <b-icon icon="box-arrow-up-right" scale="0.8"></b-icon>
+          </b-button>
+        </b-col>
+      </b-row>
     </b-card>
   </div>
 </template>
