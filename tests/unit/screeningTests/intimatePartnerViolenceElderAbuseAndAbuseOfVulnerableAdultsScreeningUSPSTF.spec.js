@@ -16,7 +16,7 @@ describe('Intimate partner violence, elder abuse, and abuse of vulnerable adults
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.intimatePartnerViolenceElderAbuseAndAbuseOfVulnerableAdultsUSPSTF',
+    id: '#intimatePartnerViolenceElderAbuseAndAbuseOfVulnerableAdultsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/intimate-partner-violence-and-abuse-of-elderly-and-vulnerable-adults-screening',
     disease: 'Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults'
   }

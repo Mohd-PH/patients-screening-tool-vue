@@ -16,7 +16,7 @@ describe('Hepatitis C infection screening', () => {
   // Last time accessed 10/04/2021
 
   const screeningData = {
-    class: '.hepatitisCInfectionUSPSTF',
+    id: '#hepatitisCInfectionUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-c-screening',
     disease: 'Hepatitis C Virus Infection in Adolescents and Adults'
   }

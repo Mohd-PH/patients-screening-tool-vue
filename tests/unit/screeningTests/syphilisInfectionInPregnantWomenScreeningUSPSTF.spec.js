@@ -16,7 +16,7 @@ describe('Syphilis infection in pregnant women screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.syphilisInfectionInPregnantWomenUSPSTF',
+    id: '#syphilisInfectionInPregnantWomenUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-pregnancy-screening',
     disease: 'Syphilis Infection in Pregnant Women'
   }

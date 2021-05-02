@@ -16,7 +16,7 @@ describe('Osteoporosis to prevent fractures screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.osteoporosisToPreventFracturesUSPSTF',
+    id: '#osteoporosisToPreventFracturesUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening',
     disease: 'Osteoporosis to Prevent Fractures'
   }

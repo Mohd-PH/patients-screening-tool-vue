@@ -16,7 +16,7 @@ describe('Obesity in children and adolescents screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.obesityInChildrenAndAdolescentsUSPSTF',
+    id: '#obesityInChildrenAndAdolescentsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/obesity-in-children-and-adolescents-screening',
     disease: 'Obesity in Children and Adolescents'
   }

@@ -16,7 +16,7 @@ describe('Colorectal cancer screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.colorectalCancerUSPSTF',
+    id: '#colorectalCancerUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
     disease: 'Colorectal cancer'
   }

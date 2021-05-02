@@ -16,7 +16,7 @@ describe('Chlamydia and gonorrhea screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.chlamydiaAndGonorrheaUSPSTF',
+    id: '#chlamydiaAndGonorrheaUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/chlamydia-and-gonorrhea-screening',
     disease: 'Chlamydia and Gonorrhea'
   }

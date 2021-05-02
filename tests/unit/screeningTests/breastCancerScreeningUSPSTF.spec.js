@@ -16,7 +16,7 @@ describe('Breast cancer screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.breastCancerUSPSTF',
+    id: '#breastCancerUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening',
     disease: 'Breast cancer'
   }

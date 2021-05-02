@@ -16,7 +16,7 @@ describe('Depression screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.depressionInAdultsUSPSTF',
+    id: '#depressionInAdultsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-adults-screening',
     disease: 'Depression in Adults'
   }

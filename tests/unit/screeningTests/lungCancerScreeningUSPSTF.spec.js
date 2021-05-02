@@ -16,7 +16,7 @@ describe('Lung cancer screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.lungCancerUSPSTF',
+    id: '#lungCancerUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening',
     disease: 'Lung cancer'
   }

@@ -16,7 +16,7 @@ describe('Latent tuberculosis infection screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.latentTuberculosisInfectionUSPSTF',
+    id: '#latentTuberculosisInfectionUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/latent-tuberculosis-infection-screening',
     disease: 'Latent Tuberculosis Infection'
   }

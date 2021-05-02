@@ -16,7 +16,7 @@ describe('Prostate cancer screening', () => {
   // Last time accessed 04/04/2021
 
   const screeningData = {
-    class: '.prostateCancerUSPSTF',
+    id: '#prostateCancerUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/prostate-cancer-screening',
     disease: 'Prostate cancer'
   }

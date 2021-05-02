@@ -16,7 +16,7 @@ describe('Dental caries in children from birth through age 5 years screening', (
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.dentalCariesInChildrenFromBirthThroughAge5YearsUSPSTF',
+    id: '#dentalCariesInChildrenFromBirthThroughAge5YearsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/dental-caries-in-children-from-birth-through-age-5-years-screening',
     disease: 'Dental Caries in Children from Birth Through Age 5 Years'
   }

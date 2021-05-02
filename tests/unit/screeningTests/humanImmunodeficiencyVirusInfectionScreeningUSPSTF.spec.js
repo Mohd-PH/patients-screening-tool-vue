@@ -16,7 +16,7 @@ describe('Human immunodeficiency virus infection screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.humanImmunodeficiencyVirusInfectionUSPSTF',
+    id: '#humanImmunodeficiencyVirusInfectionUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/human-immunodeficiency-virus-hiv-infection-screening',
     disease: 'Human Immunodeficiency Virus (HIV) Infection'
   }

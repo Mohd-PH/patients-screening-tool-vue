@@ -16,7 +16,7 @@ describe('Depression in children and adolescents screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.depressionInChildrenAndAdolescentsUSPSTF',
+    id: '#depressionInChildrenAndAdolescentsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-children-and-adolescents-screening',
     disease: 'Depression in Children and Adolescents'
   }

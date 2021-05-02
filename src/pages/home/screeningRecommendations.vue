@@ -7,7 +7,8 @@
           lg="6"
           v-for="screening in screeningForThisPatient"
           :key="screening.class"
-          :class="['recommendation', screening.class]">
+          class="recommendation"
+          :id="screening.id">
           <screeningRecommendationCard
           :disease="screening.recommendation.disease"
           :organization="screening.recommendation.organization"
@@ -45,7 +46,7 @@ export default {
       Object.keys(screeningRecommendationsAlgorithms).forEach(key => {
         if (this[key]) {
           screening.push({
-            class: key,
+            id: key,
             recommendation: this[key]
           })
         }
