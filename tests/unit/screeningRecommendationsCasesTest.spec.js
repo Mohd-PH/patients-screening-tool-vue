@@ -11,7 +11,7 @@ localVue.use(BootstrapVueIcons)
 
 describe('Screening recommendations cases', () => {
   // This test will test screening recommendation made by the screeningRecommendation.vue file for different cases
-  it('Screens a 40 year old male who is overweight "BMI = 27" for abnormal blood glucose and T2DM, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 40 year old male who is overweight "BMI = 27" for abnormal blood glucose and T2DM, prediabetes and T2DM, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -46,6 +46,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -56,7 +57,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 60 year old male smoker for 30 pack year for lung cancer, prostate cancer, colorectal cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 60 year old male smoker for 30 pack year for lung cancer, prostate cancer, colorectal cancer, depression, hypertension, prediabetes and T2DM, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -89,6 +90,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -99,7 +101,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 55 year old female postmenopausal smoker for 19 pack year for breast cancer, cervical cancer, osteoporosis, colorectal cancer, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 55 year old female postmenopausal smoker for 19 pack year for breast cancer, cervical cancer, osteoporosis, colorectal cancer, depression, prediabetes and T2DM, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -133,6 +135,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -143,7 +146,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 20 year old female medically free for depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection, hepatitis C infection and intimate partener violence', async () => {
+  it('Screens a 20 year old female medically free for depression, hypertension, prediabetes and T2DM, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection, hepatitis C infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -177,6 +180,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -187,7 +191,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, hypertension, gestational diabetes mellitus, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, Rh(D) incompatibility, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
+  it('Screens a 43 year old female medically free pregnant for breast cancer, cervical cancer, depression, prediabetes and T2DM, hypertension, gestational diabetes mellitus, unhealthy alcohol use, unhealthy drug use, HIV infection, chlamydia infection, gonorrhea infection, latent tuberculosis infection, hepatitis B infection, hepatitis C infection, syphilis infection, Rh(D) incompatibility, preeclampsia, Asymptomatic Bacteriuria and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -221,6 +225,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).toContain('Rh(D) Incompatibility')
@@ -231,7 +236,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 55 year old male obese (BMI = 33) and smoker for 20 pack year but medically free for prostate cancer, colorectal cancer, lung cancer, abnormal BG and T2DM, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
+  it('Screens a 55 year old male obese (BMI = 33) and smoker for 20 pack year but medically free for prostate cancer, colorectal cancer, lung cancer, prediabetes and T2DM, abnormal BG and T2DM, depression, hypertension, unhealthy alcohol use, unhealthy drug use, HIV infection, latent tuberculosis infection, syphilis Infection, hepatitis B infection and hepatitis C infection', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -267,6 +272,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -277,7 +283,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 12 year old female medically free for obesity, depression, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
+  it('Screens a 12 year old female medically free for obesity, depression, prediabetes and T2DM, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -311,6 +317,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).not.toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -321,7 +328,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for abdominal aortic aneurysm, colorectal cancer, depression, latent tuberculosis infection, syphilis Infection, hepatitis B infection, hepatitis C infection, high blood pressure, lung cancer, unhealthy alcohol use and unhealthy drug use', async () => {
+  it('Screens a 70 year old male medically free with normal weight who is an ex-smoker for abdominal aortic aneurysm, prediabetes and T2DM, colorectal cancer, depression, latent tuberculosis infection, syphilis Infection, hepatitis B infection, hepatitis C infection, high blood pressure, lung cancer, unhealthy alcohol use and unhealthy drug use', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -357,6 +364,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')
@@ -399,6 +407,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Lung cancer')
     expect(wrapper.text()).not.toContain('Obesity in Children and Adolescents')
     expect(wrapper.text()).not.toContain('Osteoporosis to Prevent Fractures')
+    expect(wrapper.text()).not.toContain('Prediabetes and Type 2 Diabetes')
     expect(wrapper.text()).not.toContain('Preeclampsia')
     expect(wrapper.text()).not.toContain('Prostate cancer')
     expect(wrapper.text()).not.toContain('Rh(D) Incompatibility')

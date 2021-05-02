@@ -533,5 +533,82 @@ Refer to the link for more information about assessment of risk, screening inter
     } else {
       return false
     }
+  },
+  prediabetesAndType2DiabetesADA2p6 () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 18) {
+      return {
+        disease: 'Prediabetes and Type 2 Diabetes',
+        organization: 'American Diabetes Association',
+        link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+        grade: 'B',
+        recommendation: `Screening for prediabetes and type 2 diabetes with an informal assessment of risk factors or validated tools should be considered in asymptomatic adults.`,
+        date: '09/12/2020'
+      }
+    } else {
+      return false
+    }
+  },
+  prediabetesAndType2DiabetesADA2p7 () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 18 && this.patientsInformationData.BMI >= 25) {
+      return {
+        disease: 'Prediabetes and Type 2 Diabetes',
+        organization: 'American Diabetes Association',
+        link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+        grade: 'B',
+        recommendation: `Testing for prediabetes and/or type 2 diabetes in asymptomatic people should be considered in adults of any age with overweight or obesity (BMI ≥25 kg/m2 or ≥23 kg/m2 in Asian Americans) and who have one or more additional risk factors for diabetes, refer to the link for details about risk factors`,
+        date: '09/12/2020'
+      }
+    } else {
+      return false
+    }
+  },
+  prediabetesAndType2DiabetesADA2p8 () {
+    if (!this.patientsInformationData) return false
+    // This recommendation doesn't apply for Males or pregnant Females
+    if (this.patientsInformationData.gender === 'Male' || this.patientsInformationData.pregnant === 'Yes') return false
+    if (this.patientsInformationData.BMI >= 25) {
+      return {
+        disease: 'Prediabetes and Type 2 Diabetes',
+        organization: 'American Diabetes Association',
+        link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+        grade: 'C',
+        recommendation: `Testing for prediabetes and/or type 2 diabetes should be considered in women with overweight or obesity planning pregnancy and/or who have one or more additional risk factor for diabetes, refer to the link for details about risk factors`,
+        date: '09/12/2020'
+      }
+    } else {
+      return false
+    }
+  },
+  prediabetesAndType2DiabetesADA2p9 () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 45) {
+      return {
+        disease: 'Prediabetes and Type 2 Diabetes',
+        organization: 'American Diabetes Association',
+        link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+        grade: 'B',
+        recommendation: `For all people, testing should begin at age 45 years.`,
+        date: '09/12/2020'
+      }
+    } else {
+      return false
+    }
+  },
+  prediabetesAndType2DiabetesADA2p13 () {
+    if (!this.patientsInformationData) return false
+    if (this.patientsInformationData.age >= 10 && this.patientsInformationData.age <= 18 && this.patientsInformationData.BMI >= 25) {
+      return {
+        disease: 'Prediabetes and Type 2 Diabetes',
+        organization: 'American Diabetes Association',
+        link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+        grade: 'B',
+        recommendation: `Risk-based screening for prediabetes and/or type 2 diabetes should be considered after the onset of puberty or after 10 years of age, whichever occurs earlier, in children and adolescents with overweight (BMI ≥85th percentile) or obesity (BMI ≥95th percentile) and who have one or more risk factor for diabetes, refer to the link for details about risk factors`,
+        date: '09/12/2020'
+      }
+    } else {
+      return false
+    }
   }
 }

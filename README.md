@@ -53,6 +53,10 @@ In the time being, it covers the recommendations made by the USPSTF for the foll
 27.  Unhealthy Drug Use: Screening
 28.  Vision in Children Ages 6 Months to 5 Years: Screening
 
+
+Also it covers the Prediabetes and Type 2 Diabetes recommendations made by the American Diabetes Association
+
+
 ## What grades of recommendation does this tool cover?
 
 In the time being, it covers the recommendations made by the USPSTF grade A,B and C:
@@ -62,3 +66,11 @@ In the time being, it covers the recommendations made by the USPSTF grade A,B an
 **B**. The USPSTF recommends the service. There is high certainty that the net benefit is moderate or there is moderate certainty that the net benefit is moderate to substantial.
 
 **C**. The USPSTF recommends selectively offering or providing this service to individual patients based on professional judgment and patient preferences. There is at least moderate certainty that the net benefit is small.
+
+And the recommendation made by the American Diabetes Associations grade A,B and C:
+
+**A**. Clear evidence from well-conducted, generalizable randomized controlled trials that are adequately powered, including: Evidence from a well-conducted multicenter trial, Evidence from a meta-analysis that incorporated quality ratings in the analysis, Compelling nonexperimental evidence, i.e., “all or none” rule developed by the Centre for Evidence-Based Medicine at the University of Oxford, Supportive evidence from well-conducted randomized controlled trials that are adequately powered, including: Evidence from a well-conducted trial at one or more institutions, Evidence from a meta-analysis that incorporated quality ratings in the analysis
+
+**B**. Supportive evidence from well-conducted cohort studies: Evidence from a well-conducted prospective cohort study or registry, Evidence from a well-conducted meta-analysis of cohort studies, Supportive evidence from a well-conducted case-control study
+
+**C**. Supportive evidence from poorly controlled or uncontrolled studies: Evidence from randomized clinical trials with one or more major or three or more minor methodological flaws that could invalidate the results, Evidence from observational studies with high potential for bias (such as case series with comparison with historical controls), Evidence from case series or case reports, Conflicting evidence with the weight of evidence supporting the recommendation

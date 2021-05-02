@@ -8,5 +8,10 @@ module.exports = {
     expect(wrapper.find(screeningData.id).element).toBeUndefined()
     expect(wrapper.text()).not.toContain(screeningData.disease)
     expect(wrapper.html()).not.toContain(screeningData.link)
+  },
+  screeningTestNotDisplayedByID (wrapper, screeningData) {
+    // Sometimes a case has multi recommendations which have the same title
+    // Use this method to look for the ID only
+    expect(wrapper.find(screeningData.id).element).toBeUndefined()
   }
 }

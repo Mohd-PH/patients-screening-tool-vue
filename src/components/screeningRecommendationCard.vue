@@ -45,6 +45,31 @@ export default {
           return null
         }
       }
+
+      if (this.organization === 'American Diabetes Association') {
+        if (this.grade === 'A') {
+          return `Clear evidence from well-conducted, generalizable randomized controlled trials that are adequately powered, including
+• Evidence from a well-conducted multicenter trial
+• Evidence from a meta-analysis that incorporated quality ratings in the analysis
+Compelling nonexperimental evidence, i.e., “all or none” rule developed by the Centre for Evidence-Based Medicine at the University of Oxford
+Supportive evidence from well-conducted randomized controlled trials that are adequately powered, including
+• Evidence from a well-conducted trial at one or more institutions
+• Evidence from a meta-analysis that incorporated quality ratings in the analysis`
+        } else if (this.grade === 'B') {
+          return `Supportive evidence from well-conducted cohort studies
+• Evidence from a well-conducted prospective cohort study or registry
+• Evidence from a well-conducted meta-analysis of cohort studies
+Supportive evidence from a well-conducted case-control study`
+        } else if (this.grade === 'C') {
+          return `Supportive evidence from poorly controlled or uncontrolled studies
+• Evidence from randomized clinical trials with one or more major or three or more minor methodological flaws that could invalidate the results
+• Evidence from observational studies with high potential for bias (such as case series with comparison with historical controls)
+• Evidence from case series or case reports
+Conflicting evidence with the weight of evidence supporting the recommendation`
+        } else {
+          return null
+        }
+      }
       return null
     }
   }
