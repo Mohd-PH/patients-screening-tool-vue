@@ -97,6 +97,9 @@ export default {
       this.$emit('patientInformationSubmitted', this.form)
     },
     onReset (e) {
+      Object.keys(this.form).forEach(key => {
+        this.form[key] = null
+      })
       this.$emit('patientInformationSubmitted', null)
     }
   }
