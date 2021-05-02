@@ -33,7 +33,7 @@
               <li>Gestational Diabetes Mellitus, Screening</li>
               <li>Screening for Hepatitis B Virus Infection in Adolescents and Adults</li>
               <li>Hepatitis C Virus Infection in Adolescents and Adults: Screening</li>
-              <li>High Blood Pressure in Adults: Screening</li>
+              <li>Screening for Hypertension in Adults</li>
               <li>Human Immunodeficiency Virus (HIV) Infection: Screening</li>
               <li>Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening</li>
               <li>Latent Tuberculosis Infection: Screening</li>

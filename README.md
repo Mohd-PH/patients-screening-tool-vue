@@ -37,7 +37,7 @@ In the time being, it covers the recommendations made by the USPSTF for the foll
 11.  Gestational Diabetes Mellitus, Screening
 12.  Screening for Hepatitis B Virus Infection in Adolescents and Adults
 13.  Hepatitis C Virus Infection in Adolescents and Adults: Screening
-14.  High Blood Pressure in Adults: Screening
+14.  Screening for Hypertension in Adults
 15.  Human Immunodeficiency Virus (HIV) Infection: Screening
 16.  Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening
 17.  Latent Tuberculosis Infection: Screening
