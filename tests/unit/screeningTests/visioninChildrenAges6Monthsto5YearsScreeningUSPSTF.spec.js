@@ -16,7 +16,7 @@ describe('Vision in children ages 6 months to 5 years screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.visioninChildrenAges6Monthsto5Years',
+    class: '.visioninChildrenAges6Monthsto5YearsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vision-in-children-ages-6-months-to-5-years-screening',
     disease: 'Vision in Children Ages 6 Months to 5 Years'
   }

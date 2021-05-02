@@ -16,7 +16,7 @@ describe('Unhealthy alcohol use in adolescents and adults Screening ', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.unhealthyAlcoholUseinAdolescentsandAdults',
+    class: '.unhealthyAlcoholUseinAdolescentsandAdultsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions',
     disease: 'Unhealthy Alcohol Use in Adolescents and Adults'
   }

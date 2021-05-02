@@ -16,7 +16,7 @@ describe('Preeclampsia screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.preeclampsia',
+    class: '.preeclampsiaUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/preeclampsia-screening',
     disease: 'Preeclampsia'
   }

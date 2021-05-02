@@ -16,7 +16,7 @@ describe('Hepatitis B infection screening', () => {
   // Last time accessed 10/04/2021
 
   const screeningData = {
-    class: '.hepatitisBInfection',
+    class: '.hepatitisBInfectionUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hepatitis-b-virus-infection-screening',
     disease: 'Hepatitis B Virus Infection in Adolescents and Adults'
   }

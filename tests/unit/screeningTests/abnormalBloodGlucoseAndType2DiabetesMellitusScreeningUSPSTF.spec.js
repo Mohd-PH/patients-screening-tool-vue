@@ -16,7 +16,7 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
   // Last time accessed 05/04/2021
 
   const screeningData = {
-    class: '.AbnormalBloodGlucoseAndType2DiabetesMellitus',
+    class: '.AbnormalBloodGlucoseAndType2DiabetesMellitusUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes',
     disease: 'Abnormal Blood Glucose and Type 2 Diabetes Mellitus'
   }

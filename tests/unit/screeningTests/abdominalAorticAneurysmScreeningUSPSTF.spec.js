@@ -16,7 +16,7 @@ describe('Abdomin aourtic aneurysm screening', () => {
   // Last time accessed 10/04/2021
 
   const screeningData = {
-    class: '.abdominalAorticAneurysm',
+    class: '.abdominalAorticAneurysmUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening',
     disease: 'Abdominal Aortic Aneurysm'
   }

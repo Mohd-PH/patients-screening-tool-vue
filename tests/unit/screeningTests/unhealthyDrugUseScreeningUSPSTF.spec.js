@@ -16,7 +16,7 @@ describe('Unhealthy drug use screening', () => {
   // Last time accessed 10/04/2021
 
   const screeningData = {
-    class: '.unhealthyDrugUse',
+    class: '.unhealthyDrugUseUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/drug-use-illicit-screening',
     disease: 'Unhealthy Drug Use'
   }

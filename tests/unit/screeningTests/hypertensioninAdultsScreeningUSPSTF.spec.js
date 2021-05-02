@@ -16,7 +16,7 @@ describe('Hypertension in Adults screening', () => {
   // Last time accessed 27/04/2021
 
   const screeningData = {
-    class: '.hypertensioninAdults',
+    class: '.hypertensioninAdultsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hypertension-in-adults-screening',
     disease: 'Hypertension in Adults'
   }

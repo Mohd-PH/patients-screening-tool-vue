@@ -16,7 +16,7 @@ describe('Rh(D) incompatibility screening', () => {
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.rhDIncompatibility',
+    class: '.rhDIncompatibilityUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/rh-d-incompatibility-screening',
     disease: 'Rh(D) Incompatibility'
   }
@@ -35,7 +35,7 @@ describe('Rh(D) incompatibility screening', () => {
     })
 
     utilities.screeningTestDisplayed(wrapper, screeningData)
-    expect(wrapper.find('.rhDIncompatibilityUnsensitized').element).not.toBeUndefined()
+    expect(wrapper.find('.rhDIncompatibilityUnsensitizedUSPSTF').element).not.toBeUndefined()
   })
 
   it('Doesn\'t screen a non-pregnant female', async () => {
@@ -52,7 +52,7 @@ describe('Rh(D) incompatibility screening', () => {
     })
 
     utilities.screeningTestNotDisplayed(wrapper, screeningData)
-    expect(wrapper.find('.rhDIncompatibilityUnsensitized').element).toBeUndefined()
+    expect(wrapper.find('.rhDIncompatibilityUnsensitizedUSPSTF').element).toBeUndefined()
   })
 
   it('Doesn\'t screen a male patient', async () => {
@@ -68,6 +68,6 @@ describe('Rh(D) incompatibility screening', () => {
     })
 
     utilities.screeningTestNotDisplayed(wrapper, screeningData)
-    expect(wrapper.find('.rhDIncompatibilityUnsensitized').element).toBeUndefined()
+    expect(wrapper.find('.rhDIncompatibilityUnsensitizedUSPSTF').element).toBeUndefined()
   })
 })

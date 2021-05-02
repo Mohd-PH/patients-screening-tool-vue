@@ -16,7 +16,7 @@ describe('Syphilis infection in nonpregnant adults and adolescents screening', (
   // Last time accessed 12/04/2021
 
   const screeningData = {
-    class: '.syphilisInfectionInNonpregnantAdultsAndAdolescents',
+    class: '.syphilisInfectionInNonpregnantAdultsAndAdolescentsUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/syphilis-infection-in-nonpregnant-adults-and-adolescents',
     disease: 'Syphilis Infection in Nonpregnant Adults and Adolescents'
   }

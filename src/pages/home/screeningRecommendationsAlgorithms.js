@@ -1,5 +1,5 @@
 module.exports = {
-  colorectalCancer () {
+  colorectalCancerUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 50 && this.patientsInformationData.age <= 75) {
       return {
@@ -29,7 +29,7 @@ Screening would be most appropriate among adults who 1) are healthy enough to un
       return false
     }
   },
-  breastCancer () {
+  breastCancerUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -63,7 +63,7 @@ Refer to the link for more information for information on implementation of the 
       return false
     }
   },
-  prostateCancer () {
+  prostateCancerUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Female') return false
@@ -80,7 +80,7 @@ Refer to the link for more information for information on implementation of the 
       return false
     }
   },
-  cervicalCancer () {
+  cervicalCancerUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -99,7 +99,7 @@ Refer to the link for the relative benefits and harms of alternative screening s
       return false
     }
   },
-  lungCancer () {
+  lungCancerUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for non-smokers
     if (this.patientsInformationData.smoker === 'No') return false
@@ -118,7 +118,7 @@ Refer to the link for the relative benefits and harms of alternative screening s
       return false
     }
   },
-  osteoporosisToPreventFractures () {
+  osteoporosisToPreventFracturesUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -145,7 +145,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  depressionInAdults () {
+  depressionInAdultsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
@@ -160,7 +160,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  AbnormalBloodGlucoseAndType2DiabetesMellitus () {
+  AbnormalBloodGlucoseAndType2DiabetesMellitusUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 40 && this.patientsInformationData.age <= 70 && this.patientsInformationData.BMI >= 25) {
       return {
@@ -175,7 +175,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  hypertensioninAdults () {
+  hypertensioninAdultsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
@@ -190,7 +190,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  unhealthyDrugUse () {
+  unhealthyDrugUseUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
@@ -206,7 +206,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  hepatitisBInfection () {
+  hepatitisBInfectionUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 10) {
       return {
@@ -223,7 +223,7 @@ Refer to the link for a description of adolescents and adults at increased risk 
       return false
     }
   },
-  hepatitisCInfection () {
+  hepatitisCInfectionUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18 && this.patientsInformationData.age <= 79) {
       return {
@@ -238,7 +238,7 @@ Refer to the link for a description of adolescents and adults at increased risk 
       return false
     }
   },
-  abdominalAorticAneurysm () {
+  abdominalAorticAneurysmUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for females
     if (this.patientsInformationData.gender === 'Female') return false
@@ -264,7 +264,7 @@ Refer to the link for a description of adolescents and adults at increased risk 
       return false
     }
   },
-  asymptomaticBacteriuriaInAdults () {
+  asymptomaticBacteriuriaInAdultsUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -281,7 +281,7 @@ Refer to the link for a description of adolescents and adults at increased risk 
       return false
     }
   },
-  humanImmunodeficiencyVirusInfection () {
+  humanImmunodeficiencyVirusInfectionUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.pregnant === 'Yes') {
       return {
@@ -306,7 +306,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  unhealthyAlcoholUseinAdolescentsandAdults () {
+  unhealthyAlcoholUseinAdolescentsandAdultsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
@@ -321,7 +321,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  intimatePartnerViolenceElderAbuseAndAbuseOfVulnerableAdults () {
+  intimatePartnerViolenceElderAbuseAndAbuseOfVulnerableAdultsUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -340,7 +340,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  syphilisInfectionInPregnantWomen () {
+  syphilisInfectionInPregnantWomenUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -357,7 +357,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  visioninChildrenAges6Monthsto5Years () {
+  visioninChildrenAges6Monthsto5YearsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 3 && this.patientsInformationData.age <= 5) {
       return {
@@ -372,7 +372,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  obesityInChildrenAndAdolescents () {
+  obesityInChildrenAndAdolescentsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 6 && this.patientsInformationData.age <= 18) {
       return {
@@ -387,7 +387,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  preeclampsia () {
+  preeclampsiaUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -404,7 +404,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  latentTuberculosisInfection () {
+  latentTuberculosisInfectionUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
@@ -419,7 +419,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  syphilisInfectionInNonpregnantAdultsAndAdolescents () {
+  syphilisInfectionInNonpregnantAdultsAndAdolescentsUSPSTF () {
     if (!this.patientsInformationData) return false
     // No screening for pregnant patients
     if (this.patientsInformationData.pregnant === 'Yes') return false
@@ -436,7 +436,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  depressionInChildrenAndAdolescents () {
+  depressionInChildrenAndAdolescentsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 12 && this.patientsInformationData.age <= 18) {
       return {
@@ -451,7 +451,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  chlamydiaAndGonorrhea () {
+  chlamydiaAndGonorrheaUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -468,7 +468,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  dentalCariesInChildrenFromBirthThroughAge5Years () {
+  dentalCariesInChildrenFromBirthThroughAge5YearsUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 0.5 && this.patientsInformationData.age <= 5) {
       return {
@@ -483,7 +483,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  gestationalDiabetesMellitus () {
+  gestationalDiabetesMellitusUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -500,7 +500,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  rhDIncompatibility () {
+  rhDIncompatibilityUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
@@ -517,7 +517,7 @@ Refer to the link for more information about assessment of risk, screening inter
       return false
     }
   },
-  rhDIncompatibilityUnsensitized () {
+  rhDIncompatibilityUnsensitizedUSPSTF () {
     if (!this.patientsInformationData) return false
     //  No screening recommendations for males
     if (this.patientsInformationData.gender === 'Male') return false
