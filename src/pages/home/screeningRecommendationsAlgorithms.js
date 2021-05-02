@@ -175,17 +175,16 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  highBloodPressureinAdults () {
+  hypertensioninAdults () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 18) {
       return {
-        disease: 'High Blood Pressure in Adults',
+        disease: 'Hypertension in Adults',
         organization: 'U.S. Preventive Services Task Force',
-        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/high-blood-pressure-in-adults-screening',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hypertension-in-adults-screening',
         grade: 'A',
-        recommendation: `The USPSTF recommends screening for high blood pressure in adults aged 18 years or older. The USPSTF recommends obtaining measurements outside of the clinical setting for diagnostic confirmation before starting treatment.
-Refer to the link for more information`,
-        date: '12/10/2015'
+        recommendation: `The USPSTF recommends screening for hypertension in adults 18 years or older with office blood pressure measurement (OBPM). The USPSTF recommends obtaining blood pressure measurements outside of the clinical setting for diagnostic confirmation before starting treatment.`,
+        date: '27/04/2021'
       }
     } else {
       return false

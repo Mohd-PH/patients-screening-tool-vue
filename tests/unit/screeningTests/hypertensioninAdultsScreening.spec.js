@@ -10,15 +10,15 @@ const localVue = createLocalVue()
 localVue.use(BootstrapVue)
 localVue.use(BootstrapVueIcons)
 
-describe('High Blood Pressure in Adults screening', () => {
+describe('Hypertension in Adults screening', () => {
   // This test follows the high blood pressure in adults screening recommendations by the U.S. Preventive services Task Force
-  // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/high-blood-pressure-in-adults-screening
-  // Last time accessed 05/04/2021
+  // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hypertension-in-adults-screening
+  // Last time accessed 27/04/2021
 
   const screeningData = {
-    class: '.highBloodPressureinAdults',
-    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/high-blood-pressure-in-adults-screening',
-    disease: 'High Blood Pressure in Adults'
+    class: '.hypertensioninAdults',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/hypertension-in-adults-screening',
+    disease: 'Hypertension in Adults'
   }
 
   it('Screen everyone who is 18 year old or older', async () => {
