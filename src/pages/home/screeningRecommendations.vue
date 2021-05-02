@@ -52,7 +52,15 @@ export default {
         }
       })
 
-      return screening
+      const gradeValue = {
+        A: 1,
+        B: 2,
+        C: 3
+      }
+
+      return screening.sort((a, b) => {
+        return gradeValue[a.recommendation.grade] - gradeValue[b.recommendation.grade]
+      })
     }
   }
 }
