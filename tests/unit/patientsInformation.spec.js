@@ -25,7 +25,7 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.smoker).toBe('No')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+    expect(wrapper.emitted('patientInformationSubmitted')[3][0]).toStrictEqual({
       age: 20,
       gender: 'Male',
       smoker: 'No',
@@ -63,7 +63,7 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.find('#input-packYears').element.value).toBe('22')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+    expect(wrapper.emitted('patientInformationSubmitted')[4][0]).toStrictEqual({
       age: 55,
       gender: 'Male',
       smoker: 'Yes',
@@ -100,7 +100,7 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.postmenopausal).toBe('Yes')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+    expect(wrapper.emitted('patientInformationSubmitted')[4][0]).toStrictEqual({
       age: 55,
       gender: 'Female',
       smoker: 'No',
@@ -141,7 +141,7 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.smoker).toBe('No')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+    expect(wrapper.emitted('patientInformationSubmitted')[5][0]).toStrictEqual({
       age: 25,
       gender: 'Female',
       smoker: 'No',
@@ -178,7 +178,7 @@ describe('patientsInformation.vue', () => {
     expect(wrapper.vm.$data.form.smoker).toBe('No')
 
     await wrapper.find('form').trigger('submit')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toStrictEqual({
+    expect(wrapper.emitted('patientInformationSubmitted')[5][0]).toStrictEqual({
       age: 55,
       gender: 'Female',
       smoker: 'No',
@@ -189,5 +189,39 @@ describe('patientsInformation.vue', () => {
       weight: 90,
       BMI: 31.5
     })
+  })
+
+  it('It emits null with every change in the form', async () => {
+    const wrapper = mount(patientsInformation, {
+      localVue
+    })
+
+    const age = wrapper.find('#input-age')
+    await age.setValue(55)
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    const height = wrapper.find('#input-height')
+    await height.setValue(169)
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    const weight = wrapper.find('#input-weight')
+    await weight.setValue(90)
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    await wrapper.find('#gender-female-button').trigger('click')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    await wrapper.find('#postmenopausal-no-button').trigger('click')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    await wrapper.find('#pregnant-no-button').trigger('click')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    await wrapper.find('#smoker-yes-button').trigger('click')
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+
+    const packYears = wrapper.find('#input-packYears')
+    await packYears.setValue(18)
+    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
   })
 })
