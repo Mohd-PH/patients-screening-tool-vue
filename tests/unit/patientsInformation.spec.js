@@ -202,26 +202,26 @@ describe('patientsInformation.vue', () => {
 
     const height = wrapper.find('#input-height')
     await height.setValue(169)
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[1][0]).toBeNull()
 
     const weight = wrapper.find('#input-weight')
     await weight.setValue(90)
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[2][0]).toBeNull()
 
     await wrapper.find('#gender-female-button').trigger('click')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[3][0]).toBeNull()
 
     await wrapper.find('#postmenopausal-no-button').trigger('click')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[4][0]).toBeNull()
 
     await wrapper.find('#pregnant-no-button').trigger('click')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[5][0]).toBeNull()
 
     await wrapper.find('#smoker-yes-button').trigger('click')
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[6][0]).toBeNull()
 
     const packYears = wrapper.find('#input-packYears')
     await packYears.setValue(18)
-    expect(wrapper.emitted('patientInformationSubmitted')[0][0]).toBeNull()
+    expect(wrapper.emitted('patientInformationSubmitted')[7][0]).toBeNull()
   })
 })
