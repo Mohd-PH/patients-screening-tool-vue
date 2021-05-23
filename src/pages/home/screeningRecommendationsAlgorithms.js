@@ -7,10 +7,21 @@ module.exports = {
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
         grade: 'A',
-        recommendation: `The USPSTF recommends screening for colorectal cancer starting at age 50 years and continuing until age 75 years.
+        recommendation: `The USPSTF recommends screening for colorectal cancer in all adults aged 50 to 75 years. 
 
-The risks and benefits of different screening methods vary. refer to the link for more information`,
-        date: '15/06/2016'
+        Refer to the link for details about screening strategies.`,
+        date: '18/05/2021'
+      }
+    } else if (this.patientsInformationData.age >= 45 && this.patientsInformationData.age <= 49) {
+      return {
+        disease: 'Colorectal cancer',
+        organization: 'U.S. Preventive Services Task Force',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
+        grade: 'B',
+        recommendation: `The USPSTF recommends screening for colorectal cancer in adults aged 45 to 49 years. 
+
+        Refer to the link for details about screening strategies.`,
+        date: '18/05/2021'
       }
     } else if (this.patientsInformationData.age >= 76 && this.patientsInformationData.age <= 85) {
       return {
@@ -18,12 +29,8 @@ The risks and benefits of different screening methods vary. refer to the link fo
         organization: 'U.S. Preventive Services Task Force',
         link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening',
         grade: 'C',
-        recommendation: `The decision to screen for colorectal cancer in adults aged 76 to 85 years should be an individual one, taking into account the patient's overall health and prior screening history.
-
-Adults in this age group who have never been screened for colorectal cancer are more likely to benefit.
-
-Screening would be most appropriate among adults who 1) are healthy enough to undergo treatment if colorectal cancer is detected and 2) do not have comorbid conditions that would significantly limit their life expectancy.`,
-        date: '15/06/2016'
+        recommendation: `The USPSTF recommends that clinicians selectively offer screening for colorectal cancer in adults aged 76 to 85 years. Evidence indicates that the net benefit of screening all persons in this age group is small. In determining whether this service is appropriate in individual cases, patients and clinicians should consider the patient's overall health, prior screening history, and  preferences.`,
+        date: '18/05/2021'
       }
     } else {
       return false

@@ -13,7 +13,7 @@ localVue.use(BootstrapVueIcons)
 describe('Colorectal cancer screening', () => {
   // This test follows the colorectal cancer screening recommendations by the U.S. Preventive services Task Force
   // https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening
-  // Last time accessed 04/04/2021
+  // Last time accessed 23/05/2021
 
   const screeningData = {
     id: '#colorectalCancerUSPSTF',
@@ -51,13 +51,43 @@ describe('Colorectal cancer screening', () => {
     utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
-  it('Doesn\'t Screen for 49 years old Male', async () => {
+  it('Screens for 49 years old Male', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
         patientsInformationData: {
           age: 49,
           gender: 'Male',
+          smoker: 'Yes'
+        }
+      }
+    })
+
+    utilities.screeningTestDisplayed(wrapper, screeningData)
+  })
+
+  it('Screens for 45 years old Female', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 45,
+          gender: 'Female',
+          smoker: 'Yes'
+        }
+      }
+    })
+
+    utilities.screeningTestDisplayed(wrapper, screeningData)
+  })
+
+  it('Doesn\' screen for 44 years old Female', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 44,
+          gender: 'Female',
           smoker: 'Yes'
         }
       }
