@@ -167,7 +167,7 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  PrediabetesAndType2DiabetesUSPSTF () {
+  prediabetesAndType2DiabetesUSPSTF () {
     if (!this.patientsInformationData) return false
     if (this.patientsInformationData.age >= 35 && this.patientsInformationData.age <= 70 && this.patientsInformationData.BMI >= 25) {
       return {

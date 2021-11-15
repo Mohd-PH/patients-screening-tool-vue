@@ -27,7 +27,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).not.toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).not.toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -71,7 +71,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -116,7 +116,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
@@ -161,7 +161,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -206,7 +206,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).toContain('Breast cancer')
     expect(wrapper.text()).toContain('Cervical cancer')
@@ -253,7 +253,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).not.toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).not.toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -298,7 +298,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -345,7 +345,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
@@ -388,7 +388,7 @@ describe('Screening recommendations cases', () => {
     })
 
     expect(wrapper.text()).not.toContain('Abdominal Aortic Aneurysm')
-    expect(wrapper.find('#PrediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
+    expect(wrapper.find('#prediabetesAndType2DiabetesUSPSTF').element).toBeUndefined()
     expect(wrapper.text()).not.toContain('Asymptomatic Bacteriuria in Adults')
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')

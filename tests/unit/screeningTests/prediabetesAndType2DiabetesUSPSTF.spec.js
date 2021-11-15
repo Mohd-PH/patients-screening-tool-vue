@@ -16,7 +16,7 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
   // Last time accessed 05/04/2021
 
   const screeningData = {
-    id: '#PrediabetesAndType2DiabetesUSPSTF',
+    id: '#prediabetesAndType2DiabetesUSPSTF',
     link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes',
     disease: 'Prediabetes and Type 2 Diabetes'
   }
