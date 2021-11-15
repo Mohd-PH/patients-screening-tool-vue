@@ -16,9 +16,9 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
   // Last time accessed 05/04/2021
 
   const screeningData = {
-    id: '#AbnormalBloodGlucoseAndType2DiabetesMellitusUSPSTF',
-    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes',
-    disease: 'Abnormal Blood Glucose and Type 2 Diabetes Mellitus'
+    id: '#PrediabetesAndType2DiabetesUSPSTF',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes',
+    disease: 'Prediabetes and Type 2 Diabetes'
   }
 
   it('Screens a 40 year old male who is overweight "BMI = 27"', async () => {
@@ -75,12 +75,48 @@ describe('Abnormal Blood Glucose and Type 2 Diabetes Mellitus screening', () => 
     utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
-  it('Doesn\'t Screen 35 year old male who is obese "BMI = 31.5"', async () => {
+  it('Screens 35 year old male who is obese "BMI = 31.5"', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
         patientsInformationData: {
           age: 35,
+          gender: 'Female',
+          smoker: 'No',
+          height: 169,
+          weight: 90,
+          BMI: 31.5
+        }
+      }
+    })
+
+    utilities.screeningTestDisplayed(wrapper, screeningData)
+  })
+
+  it('Doesn\'t screen 34 year old male who is obese "BMI = 31.5"', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 34,
+          gender: 'Female',
+          smoker: 'No',
+          height: 169,
+          weight: 90,
+          BMI: 31.5
+        }
+      }
+    })
+
+    utilities.screeningTestNotDisplayed(wrapper, screeningData)
+  })
+
+  it('Doesn\'t screen 71 year old male who is obese "BMI = 31.5"', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 71,
           gender: 'Female',
           smoker: 'No',
           height: 169,

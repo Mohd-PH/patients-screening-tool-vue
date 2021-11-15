@@ -25,7 +25,7 @@ No, it doesn't collect any data, it works entirely on the browser without the ne
 In the time being, it covers the recommendations made by the USPSTF for the following topics:
 
 1.  Abdominal Aortic Aneurysm: Screening
-2.  Abnormal Blood Glucose and Type 2 Diabetes Mellitus: Screening
+2.  Prediabetes and Type 2 Diabetes: Screening
 3.  Asymptomatic Bacteriuria in Adults: Screening
 4.  Breast Cancer: Screening
 5.  Cervical Cancer: Screening

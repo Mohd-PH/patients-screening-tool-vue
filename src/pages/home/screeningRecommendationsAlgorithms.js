@@ -167,16 +167,16 @@ Refer to the link for more information on risk assessment`,
       return false
     }
   },
-  AbnormalBloodGlucoseAndType2DiabetesMellitusUSPSTF () {
+  PrediabetesAndType2DiabetesUSPSTF () {
     if (!this.patientsInformationData) return false
-    if (this.patientsInformationData.age >= 40 && this.patientsInformationData.age <= 70 && this.patientsInformationData.BMI >= 25) {
+    if (this.patientsInformationData.age >= 35 && this.patientsInformationData.age <= 70 && this.patientsInformationData.BMI >= 25) {
       return {
-        disease: 'Abnormal Blood Glucose and Type 2 Diabetes Mellitus',
+        disease: 'Prediabetes and Type 2 Diabetes',
         organization: 'U.S. Preventive Services Task Force',
-        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-abnormal-blood-glucose-and-type-2-diabetes',
+        link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes',
         grade: 'B',
-        recommendation: `The USPSTF recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults aged 40 to 70 years who are overweight or obese. Clinicians should offer or refer patients with abnormal blood glucose to intensive behavioral counseling interventions to promote a healthful diet and physical activity.`,
-        date: '26/10/2015'
+        recommendation: `The USPSTF recommends screening for prediabetes and type 2 diabetes in adults aged 35 to 70 years who have overweight or obesity. Clinicians should offer or refer patients with prediabetes to effective preventive interventions.`,
+        date: '24/08/2021'
       }
     } else {
       return false
