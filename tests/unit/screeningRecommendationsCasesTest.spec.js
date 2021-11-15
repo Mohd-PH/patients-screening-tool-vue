@@ -303,7 +303,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Breast cancer')
     expect(wrapper.text()).not.toContain('Cervical cancer')
     expect(wrapper.text()).not.toContain('Colorectal cancer')
-    expect(wrapper.text()).not.toContain('Chlamydia and Gonorrhea')
+    expect(wrapper.text()).toContain('Chlamydia and Gonorrhea')
     expect(wrapper.text()).not.toContain('Dental Caries in Children from Birth Through Age 5 Years')
     expect(wrapper.text()).not.toContain('Depression in Adults')
     expect(wrapper.text()).toContain('Depression in Children and Adolescents')

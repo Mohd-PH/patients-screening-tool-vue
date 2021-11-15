@@ -36,7 +36,7 @@ describe('Chlamydia and gonorrhea screening', () => {
     utilities.screeningTestNotDisplayed(wrapper, screeningData)
   })
 
-  it('Doesn\'t Screen a 17 year old female', async () => {
+  it('Screens a 17 year old female', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
@@ -48,7 +48,7 @@ describe('Chlamydia and gonorrhea screening', () => {
       }
     })
 
-    utilities.screeningTestNotDisplayed(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 
   it('Screens an 18 year old female', async () => {
