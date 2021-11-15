@@ -17,7 +17,7 @@ describe('Gestational diabetes mellitus screening', () => {
 
   const screeningData = {
     id: '#gestationalDiabetesMellitusUSPSTF',
-    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/gestational-diabetes-mellitus-screening',
+    link: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/gestational-diabetes-screening',
     disease: 'Gestational Diabetes Mellitus'
   }
 
