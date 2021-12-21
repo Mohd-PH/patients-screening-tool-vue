@@ -27,7 +27,6 @@
               <li>Cervical Cancer: Screening</li>
               <li>Chlamydia and Gonorrhea: Screening</li>
               <li>Colorectal Cancer: Screening</li>
-              <li>Dental Caries in Children from Birth Through Age 5 Years: Screening</li>
               <li>Depression in Adults: Screening</li>
               <li>Depression in Children and Adolescents: Screening</li>
               <li>Gestational Diabetes Mellitus, Screening</li>
@@ -41,6 +40,7 @@
               <li>Obesity in Children and Adolescents: Screening</li>
               <li>Osteoporosis to Prevent Fractures: Screening</li>
               <li>Preeclampsia: Screening</li>
+              <li>Prevention of Dental Caries in Children Younger Than 5 Years: Screening and Interventions</li>
               <li>Prostate Cancer: Screening</li>
               <li>Rh(D) Incompatibility: Screening</li>
               <li>Syphilis Infection in Nonpregnant Adults and Adolescents: Screening </li>

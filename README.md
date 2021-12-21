@@ -31,20 +31,20 @@ In the time being, it covers the recommendations made by the USPSTF for the foll
 5.  Cervical Cancer: Screening
 6.  Chlamydia and Gonorrhea: Screening
 7.  Colorectal Cancer: Screening
-8.  Dental Caries in Children from Birth Through Age 5 Years: Screening
-9.  Depression in Adults: Screening
-10.  Depression in Children and Adolescents: Screening
-11.  Gestational Diabetes Mellitus, Screening
-12.  Screening for Hepatitis B Virus Infection in Adolescents and Adults
-13.  Hepatitis C Virus Infection in Adolescents and Adults: Screening
-14.  Screening for Hypertension in Adults
-15.  Human Immunodeficiency Virus (HIV) Infection: Screening
-16.  Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening
-17.  Latent Tuberculosis Infection: Screening
-18.  Lung Cancer: Screening
-19.  Obesity in Children and Adolescents: Screening
-20.  Osteoporosis to Prevent Fractures: Screening
-21.  Preeclampsia: Screening
+8.  Depression in Adults: Screening
+9.   Depression in Children and Adolescents: Screening
+10.  Gestational Diabetes Mellitus, Screening
+11.  Screening for Hepatitis B Virus Infection in Adolescents and Adults
+12.  Hepatitis C Virus Infection in Adolescents and Adults: Screening
+13.  Screening for Hypertension in Adults
+14.  Human Immunodeficiency Virus (HIV) Infection: Screening
+15.  Intimate Partner Violence, Elder Abuse, and Abuse of Vulnerable Adults: Screening
+16.  Latent Tuberculosis Infection: Screening
+17.  Lung Cancer: Screening
+18.  Obesity in Children and Adolescents: Screening
+19.  Osteoporosis to Prevent Fractures: Screening
+20.  Preeclampsia: Screening
+21.  Prevention of Dental Caries in Children Younger Than 5 Years: Screening and Interventions
 22.  Prostate Cancer: Screening
 23.  Rh(D) Incompatibility: Screening
 24.  Syphilis Infection in Nonpregnant Adults and Adolescents: Screening
