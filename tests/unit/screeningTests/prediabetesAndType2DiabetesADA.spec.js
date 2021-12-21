@@ -17,7 +17,7 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
 
   const screeningData = {
     id: null,
-    link: 'https://care.diabetesjournals.org/content/44/Supplement_1/S15',
+    link: 'https://diabetesjournals.org/care/article/45/Supplement_1/S17/138925/2-Classification-and-Diagnosis-of-Diabetes',
     disease: 'Prediabetes and Type 2 Diabetes'
   }
 
@@ -36,19 +36,44 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
     utilities.screeningTestDisplayed(wrapper, screeningData)
+
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p8'
+    utilities.screeningTestDisplayed(wrapper, screeningData)
+
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
+    utilities.screeningTestDisplayed(wrapper, screeningData)
+
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
+    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+  })
+
+  it('Screens a 35 year old male who is overweight "BMI = 27"', async () => {
+    const wrapper = mount(screeningRecommendations, {
+      localVue,
+      propsData: {
+        patientsInformationData: {
+          age: 35,
+          gender: 'Male',
+          smoker: 'No',
+          height: 172,
+          weight: 80,
+          BMI: 27
+        }
+      }
+    })
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
     utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p8'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
   })
 
@@ -67,19 +92,16 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
-    utilities.screeningTestDisplayed(wrapper, screeningData)
-
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
     utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p8'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
     utilities.screeningTestDisplayed(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
   })
 
@@ -100,9 +122,6 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
-    utilities.screeningTestDisplayed(wrapper, screeningData)
-
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
     utilities.screeningTestDisplayed(wrapper, screeningData)
 
@@ -112,7 +131,7 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
   })
 
@@ -131,11 +150,8 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
-    utilities.screeningTestDisplayed(wrapper, screeningData)
-
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p8'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
@@ -143,7 +159,7 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
   })
 
@@ -163,11 +179,8 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
-    utilities.screeningTestDisplayed(wrapper, screeningData)
-
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
+    utilities.screeningTestDisplayed(wrapper, screeningData)
 
     screeningData.id = '#prediabetesAndType2DiabetesADA2p8'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
@@ -175,7 +188,7 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
     utilities.screeningTestDisplayed(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
   })
 
@@ -194,9 +207,6 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
       }
     })
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p6'
-    utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
-
     screeningData.id = '#prediabetesAndType2DiabetesADA2p7'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
 
@@ -206,7 +216,7 @@ describe('Prediabetes and Type 2 Diabetes screening and testing', () => {
     screeningData.id = '#prediabetesAndType2DiabetesADA2p9'
     utilities.screeningTestNotDisplayedByID(wrapper, screeningData)
 
-    screeningData.id = '#prediabetesAndType2DiabetesADA2p13'
+    screeningData.id = '#prediabetesAndType2DiabetesADA2p14'
     utilities.screeningTestDisplayed(wrapper, screeningData)
   })
 })

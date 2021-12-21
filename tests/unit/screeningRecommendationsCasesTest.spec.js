@@ -283,7 +283,7 @@ describe('Screening recommendations cases', () => {
     expect(wrapper.text()).not.toContain('Vision in Children Ages 6 Months to 5 Years')
   })
 
-  it('Screens a 12 year old female medically free for obesity, depression, prediabetes and T2DM, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
+  it('Screens a 12 year old female medically free for obesity, depression, syphilis Infection, hepatitis B infection and intimate partener violence', async () => {
     const wrapper = mount(screeningRecommendations, {
       localVue,
       propsData: {
